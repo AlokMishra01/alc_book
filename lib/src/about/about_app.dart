@@ -66,8 +66,8 @@ class AboutApp extends StatelessWidget {
                         ),
                       ),
                       TextSpan(
-                        text: 'Ps. Dambar G. Magar, Lusan Man Mane, and all '
-                            'intercessors of Abundant Life Church.',
+                        text: 'Ps. Dambar G. Magar, Lusan Man Mane, Alok Mishra'
+                            ', and all intercessors of Abundant Life Church.',
                         style: TextStyle(
                           color: AppColors.textTwo,
                           fontSize: 14.0,
