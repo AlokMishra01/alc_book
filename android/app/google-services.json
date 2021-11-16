@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1022978782079",
+    "project_id": "timothy-books",
+    "storage_bucket": "timothy-books.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022978782079:android:8812c0f994ed82ab5e604a",
+        "android_client_info": {
+          "package_name": "np.com.alokmishra.alc_book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022978782079-9drjktph321k2pcmfd1fj5ufs4r6gc47.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJCGL_yg66DTdXG1HbtgAwLc1u07GZBL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022978782079-9drjktph321k2pcmfd1fj5ufs4r6gc47.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
