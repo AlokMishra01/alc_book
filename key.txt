@@ -1,0 +1,2 @@
+keytool -genkey -v -keystore "C:\Flutter Projects\alc_book\upload-keystore.jks" -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+keytool -importkeystore -srckeystore "C:\Flutter Projects\alc_book\upload-keystore.jks" -destkeystore "C:\Flutter Projects\alc_book\upload-keystore.jks" -deststoretype pkcs12

@@ -42,7 +42,7 @@ class AboutApp extends StatelessWidget {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: 'A special thank goes to',
+                        text: 'A special thank goes to ',
                         style: TextStyle(
                           color: AppColors.textTwo,
                           fontSize: 14.0,
@@ -57,16 +57,16 @@ class AboutApp extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
+                      // TextSpan(
+                      //   text: 'Friend of Daniel, ',
+                      //   style: TextStyle(
+                      //     color: AppColors.textTwo,
+                      //     fontSize: 14.0,
+                      //     fontWeight: FontWeight.w400,
+                      //   ),
+                      // ),
                       TextSpan(
-                        text: 'Friend of Daniel, ',
-                        style: TextStyle(
-                          color: AppColors.textTwo,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'Ps. Dambar G. Magar, Lusan Man Mane, Alok Mishra'
+                        text: 'Alok Mishra, Ps. Dambar G. Magar, Lusan Man Mane'
                             ', and all intercessors of Abundant Life Church.',
                         style: TextStyle(
                           color: AppColors.textTwo,
