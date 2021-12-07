@@ -57,5 +57,5 @@ class Images {
   static String profile =
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/profile.png?alt=media';
   static String about =
-      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/about.png?alt=media';
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/about.jpg?alt=media';
 }

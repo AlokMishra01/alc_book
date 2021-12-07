@@ -20,7 +20,7 @@ class BookList {
           '%20Strategy%20(Pdf).pdf?alt=media',
     ),
     BookModel(
-      name: 'बाइबलीय स्तुति प्रशंसा र आराधना एवम् आराधकहरूको जीवन ढाँचा ',
+      name: 'बाइबलीय स्तुति-प्रशंसा र आराधना एवम् आराधकहरूको जीवन ढाँचा ',
       author: '- डा. तिमोथी अर्याल',
       cover: Images.book6,
       book: 'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
@@ -29,7 +29,7 @@ class BookList {
           'alt=media',
     ),
     BookModel(
-      name: 'दशांश र भेटी दिने बाइबलीय तरीका',
+      name: 'दशांश र भेटी दिने बाइबलीय तरिका',
       author: '- डा. तिमोथी अर्याल',
       cover: Images.book4,
       book: 'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
@@ -137,7 +137,7 @@ class BookList {
           'and%20Miracles%20of%20Whole%20Bible%20(Pdf).pdf?alt=media',
     ),
     BookModel(
-      name: 'अन्तर्बिन्ती प्रार्थनाको महत्व',
+      name: 'अन्तर्बिन्ती प्रार्थनाको महत्त्व',
       author: '- डा. तिमोथी अर्याल',
       cover: Images.book26,
       book: 'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'

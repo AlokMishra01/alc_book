@@ -1,9 +1,10 @@
+import 'package:alc_book/src/book_pdf/book_pdf.dart';
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:alc_book/src/models/book_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:page_transition/page_transition.dart';
 
 class CategoryFormDownloads extends StatelessWidget {
   final String title;
@@ -77,7 +78,7 @@ class CategoryFormDownloads extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24.0),
                 ),
                 child: Text(
-                  'Download Now',
+                  'View',
                   style: TextStyle(
                     color: AppColors.white,
                     fontWeight: FontWeight.w400,
@@ -85,7 +86,17 @@ class CategoryFormDownloads extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  launch(books[i].book);
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: BookPDF(
+                        title: title,
+                        book: books[i],
+                      ),
+                    ),
+                  );
+                  // launch(books[i].book);
                 },
               ),
             ],
