@@ -27,6 +27,6 @@ void main() async {
   final settingsController = SettingsController(SettingsService());
   await settingsController.loadSettings();
   SharedPreferences preferences = await SharedPreferences.getInstance();
-  bool b = preferences.getBool('skip') ?? false;
+  bool b = preferences.getBool('logged') ?? false;
   runApp(MyApp(settingsController: settingsController, firstTime: b));
 }

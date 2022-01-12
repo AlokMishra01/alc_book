@@ -2,12 +2,14 @@ import 'package:alc_book/src/book_pdf/book_pdf.dart';
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:alc_book/src/models/book_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class CategoryBooks extends StatelessWidget {
+class CategoryBooks extends StatefulWidget {
   final String title;
   final List<BookModel> books;
 
@@ -16,6 +18,28 @@ class CategoryBooks extends StatelessWidget {
     required this.title,
     this.books = const [],
   }) : super(key: key);
+
+  @override
+  State<CategoryBooks> createState() => _CategoryBooksState();
+}
+
+class _CategoryBooksState extends State<CategoryBooks> {
+  late SharedPreferences _pref;
+  String _user = '';
+  bool _loaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _getUser();
+  }
+
+  _getUser() async {
+    _pref = await SharedPreferences.getInstance();
+    _user = _pref.getString('user') ?? '';
+    _loaded = true;
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +56,7 @@ class CategoryBooks extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          title,
+          widget.title,
           style: GoogleFonts.khand(
             color: AppColors.white,
             fontWeight: FontWeight.w700,
@@ -62,7 +86,7 @@ class CategoryBooks extends StatelessWidget {
                     ),
                   ),
                 ),
-                imageUrl: books[i].cover,
+                imageUrl: widget.books[i].cover,
                 height: width / 2,
               ),
               const SizedBox(width: 16.0),
@@ -71,7 +95,7 @@ class CategoryBooks extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      books[i].name,
+                      widget.books[i].name,
                       style: GoogleFonts.khand(
                         color: AppColors.textOne,
                         fontSize: 24.0,
@@ -81,7 +105,7 @@ class CategoryBooks extends StatelessWidget {
                     ),
                     const SizedBox(height: 4.0),
                     Text(
-                      books[i].author,
+                      widget.books[i].author,
                       style: GoogleFonts.khand(
                         color: AppColors.red,
                         fontSize: 16.0,
@@ -89,33 +113,112 @@ class CategoryBooks extends StatelessWidget {
                         height: 1.25,
                       ),
                     ),
-                    MaterialButton(
-                      elevation: 0.0,
-                      color: AppColors.red,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24.0),
+                    if (_loaded)
+                      FutureBuilder<DocumentSnapshot>(
+                        future: FirebaseFirestore.instance
+                            .collection('users')
+                            .doc(_user)
+                            .get(),
+                        builder: (
+                          BuildContext context,
+                          AsyncSnapshot<DocumentSnapshot> snapshot,
+                        ) {
+                          if (snapshot.hasError) {
+                            return MaterialButton(
+                              elevation: 0.0,
+                              color: AppColors.red,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(24.0),
+                              ),
+                              child: Text(
+                                'Pending',
+                                style: GoogleFonts.khand(
+                                  color: AppColors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              onPressed: () {},
+                            );
+                          }
+
+                          if (snapshot.hasData && !snapshot.data!.exists) {
+                            return MaterialButton(
+                              elevation: 0.0,
+                              color: AppColors.red,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(24.0),
+                              ),
+                              child: Text(
+                                'Pending',
+                                style: GoogleFonts.khand(
+                                  color: AppColors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                              onPressed: () {},
+                            );
+                          }
+
+                          if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            if ((snapshot.data?.get('status') ?? false)
+                                as bool) {
+                              return MaterialButton(
+                                elevation: 0.0,
+                                color: AppColors.red,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(24.0),
+                                ),
+                                child: Text(
+                                  'पढ्नुहोस्',
+                                  style: GoogleFonts.khand(
+                                    color: AppColors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      child: BookPDF(
+                                        title: widget.title,
+                                        book: widget.books[i],
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                            } else {
+                              return MaterialButton(
+                                elevation: 0.0,
+                                color: AppColors.red,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(24.0),
+                                ),
+                                child: Text(
+                                  'Pending',
+                                  style: GoogleFonts.khand(
+                                    color: AppColors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                onPressed: () {},
+                              );
+                            }
+                          }
+
+                          return const SizedBox(
+                            height: 24.0,
+                            width: 24.0,
+                            child: CircularProgressIndicator(),
+                          );
+                        },
                       ),
-                      child: Text(
-                        'पढ्नुहोस्',
-                        style: GoogleFonts.khand(
-                          color: AppColors.white,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.rightToLeft,
-                            child: BookPDF(
-                              title: title,
-                              book: books[i],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
                   ],
                 ),
               ),
@@ -123,7 +226,7 @@ class CategoryBooks extends StatelessWidget {
           ),
         ),
         separatorBuilder: (_, i) => const SizedBox(height: 24.0),
-        itemCount: books.length,
+        itemCount: widget.books.length,
       ),
     );
   }

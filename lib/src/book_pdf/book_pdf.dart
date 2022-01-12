@@ -1,10 +1,8 @@
-import 'dart:developer';
-
-import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:alc_book/src/models/book_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -23,32 +21,32 @@ class BookPDF extends StatefulWidget {
 }
 
 class _BookPDFState extends State<BookPDF> {
-  bool _isLoading = true;
-  late PDFDocument _document;
+  // bool _isLoading = true;
+  // late PDFDocument _document;
 
   @override
   void initState() {
     super.initState();
-    loadDocument();
+    // loadDocument();
   }
 
-  loadDocument() async {
-    try {
-      _document = await PDFDocument.fromURL(
-        widget.book.book,
-      );
-    } catch (error, stackTrace) {
-      log(
-        'PDF Can\'t be loaded',
-        error: error,
-        stackTrace: stackTrace,
-        name: 'loadDocument',
-      );
-    }
-
-    _isLoading = false;
-    setState(() {});
-  }
+  // loadDocument() async {
+  //   try {
+  //     _document = await PDFDocument.fromURL(
+  //       widget.book.book,
+  //     );
+  //   } catch (error, stackTrace) {
+  //     log(
+  //       'PDF Can\'t be loaded',
+  //       error: error,
+  //       stackTrace: stackTrace,
+  //       name: 'loadDocument',
+  //     );
+  //   }
+  //
+  //   _isLoading = false;
+  //   setState(() {});
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -81,16 +79,53 @@ class _BookPDFState extends State<BookPDF> {
           ),
         ],
       ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : PDFViewer(
-              document: _document,
-              scrollDirection: Axis.vertical,
-              enableSwipeNavigation: true,
-              lazyLoad: true,
-              indicatorBackground: AppColors.red,
-              pickerButtonColor: AppColors.red,
+      body: const PDF(
+        pageSnap: false,
+        enableSwipe: true,
+        pageFling: false,
+      ).cachedFromUrl(
+        widget.book.book,
+        placeholder: (progress) => Center(
+          child: CircularProgressIndicator(
+            value: progress / 100,
+          ),
+        ),
+        errorWidget: (error) => Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.error_rounded,
+                    color: AppColors.red,
+                    size: 64.0,
+                  ),
+                  Text(
+                    error.toString(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: AppColors.red,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
             ),
+          ),
+        ),
+      ),
+      // body: _isLoading
+      //     ? const Center(child: CircularProgressIndicator())
+      //     : PDFViewer(
+      //         document: _document,
+      //         scrollDirection: Axis.vertical,
+      //         enableSwipeNavigation: true,
+      //         lazyLoad: true,
+      //         indicatorBackground: AppColors.red,
+      //         pickerButtonColor: AppColors.red,
+      //       ),
     );
   }
 }
