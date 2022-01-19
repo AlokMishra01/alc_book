@@ -1,5 +1,7 @@
 import 'dart:developer';
+import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,5 +30,17 @@ void main() async {
   await settingsController.loadSettings();
   SharedPreferences preferences = await SharedPreferences.getInstance();
   bool b = preferences.getBool('logged') ?? false;
-  runApp(MyApp(settingsController: settingsController, firstTime: b));
+  final data = await FirebaseFirestore.instance
+      .collection('iOSReview')
+      .doc('inReview')
+      .get();
+  bool status = b;
+  if (Platform.isIOS) {
+    status = data.get('status') ?? false;
+  }
+
+  runApp(MyApp(
+    settingsController: settingsController,
+    firstTime: status ? status : b,
+  ));
 }

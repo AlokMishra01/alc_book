@@ -227,6 +227,30 @@ class _FirebaseAuthViewState extends State<FirebaseAuthView> {
                       );
                     },
                   ),
+                if (!_isSaved && !_saving) const SizedBox(height: 24.0),
+                if (!_isSaved && !_saving)
+                  MaterialButton(
+                    elevation: 0.0,
+                    color: Colors.transparent,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 12.0,
+                      horizontal: 48.0,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    child: Text(
+                      'Back',
+                      style: TextStyle(
+                        color: AppColors.primary,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
                 if (!_isSaved && _saving)
                   CircularProgressIndicator(
                     color: AppColors.primary,

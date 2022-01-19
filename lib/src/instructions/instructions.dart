@@ -1,4 +1,5 @@
 import 'package:alc_book/src/auth/views/firebase_auth_view.dart';
+import 'package:alc_book/src/auth/views/firebase_register_view.dart';
 import 'package:alc_book/src/categories/categories.dart';
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -212,36 +213,72 @@ class _InstructionsState extends State<Instructions> {
                         ),
                       ),
                       const SizedBox(height: 24.0),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: MaterialButton(
-                          elevation: 0.0,
-                          color: AppColors.primary,
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 12.0,
-                            horizontal: 48.0,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.0),
-                          ),
-                          child: Text(
-                            'Login',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18.0,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: MaterialButton(
+                              elevation: 0.0,
+                              color: AppColors.primary,
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 12.0,
+                                horizontal: 24.0,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(24.0),
+                              ),
+                              child: Text(
+                                'Register',
+                                style: TextStyle(
+                                  color: AppColors.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 18.0,
+                                ),
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: const FirebaseRegisterView(),
+                                  ),
+                                );
+                              },
                             ),
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: const FirebaseAuthView(),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: MaterialButton(
+                              elevation: 0.0,
+                              color: AppColors.primary,
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 12.0,
+                                horizontal: 24.0,
                               ),
-                            );
-                          },
-                        ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(24.0),
+                              ),
+                              child: Text(
+                                'Login',
+                                style: TextStyle(
+                                  color: AppColors.white,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 18.0,
+                                ),
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: const FirebaseAuthView(),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: 36.0),
                     ],

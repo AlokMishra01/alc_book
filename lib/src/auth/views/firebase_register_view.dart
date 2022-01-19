@@ -386,23 +386,32 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                   value: _account,
                   items: const [
                     DropdownMenuItem(
-                      value: 'Deesis Aryal, Rastriya Banijya Bank',
+                      value: 'Deesis Aryal, '
+                          'Rastriya Banijya Bank, '
+                          'A/C No: 1150100043134010',
                       child: Text(
-                        'Deesis Aryal, Rastriya Banijya Bank',
+                        'Deesis Aryal, Rastriya Banijya Bank\n'
+                        'A/C No: 1150100043134010',
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     DropdownMenuItem(
-                      value: 'Deesis Aryal, Nepal Investment Bank',
+                      value: 'Deesis Aryal, '
+                          'Nepal Investment Bank, '
+                          'A/C No: 01705080076526',
                       child: Text(
-                        'Deesis Aryal, Nepal Investment Bank',
+                        'Deesis Aryal, Nepal Investment Bank\n'
+                        'A/C No: 01705080076526',
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     DropdownMenuItem(
-                      value: 'Tara Aryal, Nepal SBI Bank Ltd.',
+                      value: 'Tara Aryal, '
+                          'Nepal SBI Bank Ltd., '
+                          'A/C No: 21515243400328',
                       child: Text(
-                        'Tara Aryal, Nepal SBI Bank Ltd.',
+                        'Tara Aryal, Nepal SBI Bank Ltd.\n'
+                        'A/C No: 21515243400328',
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
@@ -616,6 +625,30 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                       'Login',
                       style: TextStyle(
                         color: AppColors.white,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                if (!_isSaved && !_saving) const SizedBox(height: 24.0),
+                if (!_isSaved && !_saving)
+                  MaterialButton(
+                    elevation: 0.0,
+                    color: Colors.transparent,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 12.0,
+                      horizontal: 48.0,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    child: Text(
+                      'Back',
+                      style: TextStyle(
+                        color: AppColors.primary,
                         fontWeight: FontWeight.w700,
                         fontSize: 18.0,
                       ),

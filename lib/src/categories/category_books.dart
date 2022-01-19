@@ -1,8 +1,12 @@
+import 'dart:io';
+
 import 'package:alc_book/src/book_pdf/book_pdf.dart';
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:alc_book/src/models/book_model.dart';
+import 'package:alc_book/src/splash/splash.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,10 +32,24 @@ class _CategoryBooksState extends State<CategoryBooks> {
   String _user = '';
   bool _loaded = false;
 
+  bool status = true;
+  bool load = false;
+
   @override
   void initState() {
     super.initState();
+    _checkStatus();
     _getUser();
+  }
+
+  _checkStatus() async {
+    final data = await FirebaseFirestore.instance
+        .collection('iOSReview')
+        .doc('inReview')
+        .get();
+    status = data.get('status') ?? false;
+    load = true;
+    setState(() {});
   }
 
   _getUser() async {
@@ -62,6 +80,47 @@ class _CategoryBooksState extends State<CategoryBooks> {
             fontWeight: FontWeight.w700,
           ),
         ),
+        actions: [
+          if (!status || !Platform.isIOS)
+            PopupMenuButton(
+              icon: const Icon(
+                Icons.keyboard_arrow_down_rounded,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              onSelected: (value) async {
+                switch (value) {
+                  case 1:
+                    await FirebaseAuth.instance.signOut();
+                    final pref = await SharedPreferences.getInstance();
+                    await pref.setBool('logged', false);
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const Splash(),
+                      ),
+                      (route) => false,
+                    );
+                }
+              },
+              itemBuilder: (cxt) => [
+                PopupMenuItem<int>(
+                  value: 1,
+                  child: Text(
+                    'Log Out',
+                    style: TextStyle(
+                      color: AppColors.textTwo,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w700,
+                      height: 1.0,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+        ],
       ),
       body: ListView.separated(
         physics: const BouncingScrollPhysics(),
@@ -113,7 +172,35 @@ class _CategoryBooksState extends State<CategoryBooks> {
                         height: 1.25,
                       ),
                     ),
-                    if (_loaded)
+                    if (status && load)
+                      MaterialButton(
+                        elevation: 0.0,
+                        color: AppColors.red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24.0),
+                        ),
+                        child: Text(
+                          'पढ्नुहोस्',
+                          style: GoogleFonts.khand(
+                            color: AppColors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16.0,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: BookPDF(
+                                title: widget.title,
+                                book: widget.books[i],
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    if (!status && _loaded)
                       FutureBuilder<DocumentSnapshot>(
                         future: FirebaseFirestore.instance
                             .collection('users')

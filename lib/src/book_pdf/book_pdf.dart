@@ -1,9 +1,16 @@
+import 'dart:io';
+
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:alc_book/src/models/book_model.dart';
+import 'package:alc_book/src/splash/splash.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BookPDF extends StatefulWidget {
@@ -21,32 +28,22 @@ class BookPDF extends StatefulWidget {
 }
 
 class _BookPDFState extends State<BookPDF> {
-  // bool _isLoading = true;
-  // late PDFDocument _document;
+  bool status = true;
 
   @override
   void initState() {
     super.initState();
-    // loadDocument();
+    _checkStatus();
   }
 
-  // loadDocument() async {
-  //   try {
-  //     _document = await PDFDocument.fromURL(
-  //       widget.book.book,
-  //     );
-  //   } catch (error, stackTrace) {
-  //     log(
-  //       'PDF Can\'t be loaded',
-  //       error: error,
-  //       stackTrace: stackTrace,
-  //       name: 'loadDocument',
-  //     );
-  //   }
-  //
-  //   _isLoading = false;
-  //   setState(() {});
-  // }
+  _checkStatus() async {
+    final data = await FirebaseFirestore.instance
+        .collection('iOSReview')
+        .doc('inReview')
+        .get();
+    status = data.get('status') ?? false;
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,14 +66,54 @@ class _BookPDFState extends State<BookPDF> {
           ),
         ),
         actions: [
-          IconButton(
-            onPressed: () {
-              launch(widget.book.book);
-            },
-            icon: const Icon(
-              CupertinoIcons.arrow_down_square_fill,
+          if (!status || !Platform.isIOS)
+            IconButton(
+              onPressed: () {
+                launch(widget.book.book);
+              },
+              icon: const Icon(
+                CupertinoIcons.arrow_down_square_fill,
+              ),
             ),
-          ),
+          if (!status || !Platform.isIOS)
+            PopupMenuButton(
+              icon: const Icon(
+                Icons.keyboard_arrow_down_rounded,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              onSelected: (value) async {
+                switch (value) {
+                  case 1:
+                    await FirebaseAuth.instance.signOut();
+                    final pref = await SharedPreferences.getInstance();
+                    await pref.setBool('logged', false);
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const Splash(),
+                      ),
+                      (route) => false,
+                    );
+                }
+              },
+              itemBuilder: (cxt) => [
+                PopupMenuItem<int>(
+                  value: 1,
+                  child: Text(
+                    'Log Out',
+                    style: TextStyle(
+                      color: AppColors.textTwo,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w700,
+                      height: 1.0,
+                    ),
+                  ),
+                ),
+              ],
+            ),
         ],
       ),
       body: const PDF(
