@@ -4,7 +4,6 @@ import 'package:alc_book/src/categories/categories.dart';
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -459,7 +458,8 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                 ),
                 const SizedBox(height: 16.0),
                 const Text(
-                  'Please send us a picture of an online payment receipt or cash deposited bank receipt by:',
+                  'Please send us a picture of an online payment receipt or '
+                  'cash deposited bank receipt by:',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16.0,
@@ -485,7 +485,7 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                         const SizedBox(width: 8.0),
                         Expanded(
                           child: Text(
-                            'Email: deesisaryal@gmail.com',
+                            'Email: aryaltimothy77@gmail.com ',
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               color: AppColors.textTwo,
@@ -512,7 +512,7 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                         const SizedBox(width: 8.0),
                         Expanded(
                           child: Text(
-                            'Viber/WhatsApp/Messanger: +977-984081486',
+                            'Viber/WhatsApp/Messenger: +977-9840841486',
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               color: AppColors.textTwo,
@@ -532,7 +532,8 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                 ),
                 const SizedBox(height: 16.0),
                 Text(
-                  'If any problem please call us : +977-9840841486  or mail us.',
+                  'If any problem please call us : '
+                  '+977-9840841486  or mail us.',
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                     color: AppColors.textTwo,
@@ -565,7 +566,7 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Continue',
+                          'Submit',
                           style: TextStyle(
                             color: AppColors.white,
                             fontWeight: FontWeight.w700,
@@ -728,9 +729,9 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
+        log('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
+        log('The account already exists for that email.');
       }
       _saving = false;
       setState(() {});
