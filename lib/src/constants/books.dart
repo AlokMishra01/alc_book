@@ -233,6 +233,14 @@ class BookList {
           'com/o/books%2FNew%20Research%20and%20Books%2FChrist%20Centered%20'
           'Parenting%20(Pdf).pdf?alt=media',
     ),
+    BookModel(
+      name: 'परमेश्वरलाई पहिलो प्रेम गर्ने ख्रिस्टियन',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book28,
+      book: 'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
+          'com/o/books%2FNew%20Research%20and%20Books%2FA%20Christian%20who%20'
+          'Loves%20God%20First.pdf?alt=media',
+    ),
   ];
 
   static final List<BookModel> listForms = [

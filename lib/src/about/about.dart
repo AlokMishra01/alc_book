@@ -10,7 +10,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class About extends StatefulWidget {
   const About({Key? key}) : super(key: key);
@@ -59,20 +58,20 @@ class _AboutState extends State<About> {
           ),
         ),
         actions: [
-          if (!status || !Platform.isIOS)
-            IconButton(
-              onPressed: () {
-                launch(
-                  'https://firebasestorage.googleapis.com/v0/b/timothy-books.'
-                  'appspot.com/o/books%2FLeadership%20%26%20Counseling%20'
-                  'College%2FProfessional%20Background%20of%20Timothy%20'
-                  'Aryal.pdf?alt=media',
-                );
-              },
-              icon: const Icon(
-                CupertinoIcons.arrow_down_square_fill,
-              ),
-            ),
+          // if (!status || !Platform.isIOS)
+          //   IconButton(
+          //     onPressed: () {
+          //       launch(
+          //         'https://firebasestorage.googleapis.com/v0/b/timothy-books.'
+          //         'appspot.com/o/books%2FLeadership%20%26%20Counseling%20'
+          //         'College%2FProfessional%20Background%20of%20Timothy%20'
+          //         'Aryal.pdf?alt=media',
+          //       );
+          //     },
+          //     icon: const Icon(
+          //       CupertinoIcons.arrow_down_square_fill,
+          //     ),
+          //   ),
           if (!status || !Platform.isIOS)
             PopupMenuButton(
               icon: const Icon(

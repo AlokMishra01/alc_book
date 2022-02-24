@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:alc_book/src/categories/categories.dart';
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,6 +19,7 @@ class FirebaseAuthView extends StatefulWidget {
 class _FirebaseAuthViewState extends State<FirebaseAuthView> {
   final _email = TextEditingController();
   final _password = TextEditingController();
+  bool _showPassword = false;
 
   bool _isSaved = false;
   bool _saving = false;
@@ -100,7 +100,7 @@ class _FirebaseAuthViewState extends State<FirebaseAuthView> {
                 TextFormField(
                   controller: _password,
                   keyboardType: TextInputType.text,
-                  obscureText: true,
+                  obscureText: !_showPassword,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.0),
@@ -135,7 +135,27 @@ class _FirebaseAuthViewState extends State<FirebaseAuthView> {
                     if (value!.length < 6) {
                       return 'Password Should Have At Least 6 Characters';
                     }
+                    return null;
                   },
+                ),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: _showPassword,
+                      activeColor: AppColors.primary,
+                      onChanged: (value) {
+                        _showPassword = value ?? false;
+                        setState(() {});
+                      },
+                    ),
+                    const Text(
+                      'Show Password',
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 36.0),
                 if (!_isSaved && !_saving)

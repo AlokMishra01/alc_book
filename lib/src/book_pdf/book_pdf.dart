@@ -11,7 +11,6 @@ import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class BookPDF extends StatefulWidget {
   final String title;
@@ -66,15 +65,15 @@ class _BookPDFState extends State<BookPDF> {
           ),
         ),
         actions: [
-          if (!status || !Platform.isIOS)
-            IconButton(
-              onPressed: () {
-                launch(widget.book.book);
-              },
-              icon: const Icon(
-                CupertinoIcons.arrow_down_square_fill,
-              ),
-            ),
+          // if (!status || !Platform.isIOS)
+          //   IconButton(
+          //     onPressed: () {
+          //       launch(widget.book.book);
+          //     },
+          //     icon: const Icon(
+          //       CupertinoIcons.arrow_down_square_fill,
+          //     ),
+          //   ),
           if (!status || !Platform.isIOS)
             PopupMenuButton(
               icon: const Icon(

@@ -24,6 +24,7 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
   final _conPassword = TextEditingController();
   String? _gender;
   String? _account;
+  bool _showPassword = false;
 
   bool _isSaved = false;
   bool _saving = false;
@@ -98,6 +99,7 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                     if (value!.length < 2) {
                       return 'Name Should Have At Least 3 Characters';
                     }
+                    return null;
                   },
                 ),
                 const SizedBox(height: 16.0),
@@ -141,6 +143,7 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                     if (!b) {
                       return 'Please enter valid email.';
                     }
+                    return null;
                   },
                 ),
                 const SizedBox(height: 16.0),
@@ -181,6 +184,7 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                     if (value!.length != 10) {
                       return 'Phone Should Have At Least 10 Numbers';
                     }
+                    return null;
                   },
                 ),
                 const SizedBox(height: 16.0),
@@ -282,13 +286,14 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                     if (value!.length < 2) {
                       return 'Country Should Have At Least 3 Characters';
                     }
+                    return null;
                   },
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
                   controller: _password,
                   keyboardType: TextInputType.text,
-                  obscureText: true,
+                  obscureText: !_showPassword,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.0),
@@ -323,13 +328,14 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                     if (value!.length < 6) {
                       return 'Password Should Have At Least 6 Characters';
                     }
+                    return null;
                   },
                 ),
                 const SizedBox(height: 16.0),
                 TextFormField(
                   controller: _conPassword,
                   keyboardType: TextInputType.text,
-                  obscureText: true,
+                  obscureText: !_showPassword,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.0),
@@ -364,7 +370,27 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
                     if ((value ?? '') != _password.text) {
                       return 'Password do not match.';
                     }
+                    return null;
                   },
+                ),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: _showPassword,
+                      activeColor: AppColors.primary,
+                      onChanged: (value) {
+                        _showPassword = value ?? false;
+                        setState(() {});
+                      },
+                    ),
+                    const Text(
+                      'Show Password',
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 24.0),
                 Divider(
