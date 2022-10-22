@@ -1,10 +1,11 @@
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:alc_book/src/constants/images.dart';
-import 'package:alc_book/src/instructions/instructions.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+
+import '../categories/categories.dart';
 
 class OurBook extends StatelessWidget {
   const OurBook({Key? key}) : super(key: key);
@@ -579,7 +580,7 @@ class OurBook extends StatelessWidget {
                         context,
                         PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: const Instructions(),
+                          child: const Categories(),
                         ),
                       );
                     },

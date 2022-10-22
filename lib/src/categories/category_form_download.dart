@@ -1,16 +1,11 @@
-import 'dart:io';
-
 import 'package:alc_book/src/book_pdf/book_pdf.dart';
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:alc_book/src/models/book_model.dart';
-import 'package:alc_book/src/splash/splash.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class CategoryFormDownloads extends StatefulWidget {
   final String title;
@@ -32,7 +27,7 @@ class _CategoryFormDownloadsState extends State<CategoryFormDownloads> {
   @override
   void initState() {
     super.initState();
-    _checkStatus();
+    // _checkStatus();
   }
 
   _checkStatus() async {
@@ -66,45 +61,45 @@ class _CategoryFormDownloadsState extends State<CategoryFormDownloads> {
           ),
         ),
         actions: [
-          if (!status || !Platform.isIOS)
-            PopupMenuButton(
-              icon: const Icon(
-                Icons.keyboard_arrow_down_rounded,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              onSelected: (value) async {
-                switch (value) {
-                  case 1:
-                    await FirebaseAuth.instance.signOut();
-                    final pref = await SharedPreferences.getInstance();
-                    await pref.setBool('logged', false);
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: const Splash(),
-                      ),
-                      (route) => false,
-                    );
-                }
-              },
-              itemBuilder: (cxt) => [
-                PopupMenuItem<int>(
-                  value: 1,
-                  child: Text(
-                    'Log Out',
-                    style: TextStyle(
-                      color: AppColors.textTwo,
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w700,
-                      height: 1.0,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          // if (!status || !Platform.isIOS)
+          //   PopupMenuButton(
+          //     icon: const Icon(
+          //       Icons.keyboard_arrow_down_rounded,
+          //     ),
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(12.0),
+          //     ),
+          //     onSelected: (value) async {
+          //       switch (value) {
+          //         case 1:
+          //           await FirebaseAuth.instance.signOut();
+          //           final pref = await SharedPreferences.getInstance();
+          //           await pref.setBool('logged', false);
+          //           Navigator.pushAndRemoveUntil(
+          //             context,
+          //             PageTransition(
+          //               type: PageTransitionType.rightToLeft,
+          //               child: const Splash(),
+          //             ),
+          //             (route) => false,
+          //           );
+          //       }
+          //     },
+          //     itemBuilder: (cxt) => [
+          //       PopupMenuItem<int>(
+          //         value: 1,
+          //         child: Text(
+          //           'Log Out',
+          //           style: TextStyle(
+          //             color: AppColors.textTwo,
+          //             fontSize: 14.0,
+          //             fontWeight: FontWeight.w700,
+          //             height: 1.0,
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
         ],
       ),
       body: ListView.separated(
