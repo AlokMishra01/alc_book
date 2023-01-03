@@ -222,7 +222,7 @@ class _AboutAppState extends State<AboutApp> {
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () => launch(
-                                'https://www.youtube.com/c/DrTimothyAryalPJCNEPAL',
+                                'https://www.youtube.com/watch?v=NV69xOFX7fQ&ab_channel=Dr.TimothyAryal',
                               ),
                       ),
                     ],

@@ -241,6 +241,21 @@ class BookList {
           'com/o/books%2FNew%20Research%20and%20Books%2FA%20Christian%20who%20'
           'Loves%20God%20First.pdf?alt=media',
     ),
+    BookModel(
+      name:
+          'चर्चको बनौट, प्रशासन र नेतृत्व सम्बन्धी बाइबलीय अध्ययन (Ecclesiology)',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book29,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FBiblical%20Study%20about%20Church%20(Ecclesiology).pdf?alt=media',
+    ),
+    BookModel(
+      name: 'The Kingship of Jesus Over Your Tongue, Time & Money',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book30,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FKingship%20of%20Jesus%20Over%20Tongue%2C%20Time%20%26%20Money.pdf?alt=media',
+    ),
   ];
 
   static final List<BookModel> listForms = [

@@ -56,6 +56,10 @@ class Images {
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2F27.jpg?alt=media';
   static String book28 =
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2FChristian-who-love-god-first.jpg?alt=media';
+  static String book29 =
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2F28.jpg?alt=media';
+  static String book30 =
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2FkingShip.jpg?alt=media';
   static String profile =
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/profile.png?alt=media';
   static String about =
