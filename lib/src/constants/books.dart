@@ -256,6 +256,12 @@ class BookList {
       book:
           'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FKingship%20of%20Jesus%20Over%20Tongue%2C%20Time%20%26%20Money.pdf?alt=media',
     ),
+    BookModel(
+        name: 'Biblical Counseling for Pastor and Leaders',
+        author: '- डा. तिमोथी अर्याल',
+        cover: Images.book31,
+        book:
+            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FBiblical%20Counseling%20for%20Pastor%20and%20Leaders.pdf?alt=media&token=5f693119-9f36-42db-ae12-a748dc344f98')
   ];
 
   static final List<BookModel> listForms = [

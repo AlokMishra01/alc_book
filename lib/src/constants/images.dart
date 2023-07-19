@@ -60,6 +60,9 @@ class Images {
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2F28.jpg?alt=media';
   static String book30 =
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2FkingShip.jpg?alt=media';
+
+  static String book31 = //Biblical Counseling for Pastor and Leaders
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2FBook%20cover_Biblical%20Counseling%20for%20Pastor%20and%20Leaders.jpg?alt=media&token=13e77db5-b35b-488c-8878-d16cf92ae7c4';
   static String profile =
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/profile.png?alt=media';
   static String about =
