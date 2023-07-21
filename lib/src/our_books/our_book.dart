@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../categories/categories.dart';
+import '../categories/categories_new.dart';
 
 class OurBook extends StatelessWidget {
   const OurBook({Key? key}) : super(key: key);
@@ -580,7 +581,7 @@ class OurBook extends StatelessWidget {
                         context,
                         PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: const Categories(),
+                          child: const CategoryNew(),
                         ),
                       );
                     },
