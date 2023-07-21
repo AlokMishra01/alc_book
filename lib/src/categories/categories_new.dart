@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
+import '../about/about.dart';
+import '../about/about_app.dart';
 import '../constants/books.dart';
 import '../constants/colors.dart';
 import 'category_books.dart';
@@ -46,14 +48,14 @@ class CategoryNew extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(35),
                     topRight: Radius.circular(35)),
                 color: Colors.white,
               ),
               child: Padding(
-                padding: EdgeInsets.all(30),
+                padding: const EdgeInsets.all(30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -119,7 +121,69 @@ class CategoryNew extends StatelessWidget {
                           ),
                         ],
                       ),
-                    )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          MaterialButton(
+                            elevation: 0.0,
+                            color: AppColors.red,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(24.0),
+                            ),
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                            visualDensity: VisualDensity.compact,
+                            child: Text(
+                              'About Dr. Timothy Aryal',
+                              style: TextStyle(
+                                color: AppColors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 14.0,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  child: const About(),
+                                ),
+                              );
+                            },
+                          ),
+                          MaterialButton(
+                            elevation: 0.0,
+                            color: AppColors.red,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(24.0),
+                            ),
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                            visualDensity: VisualDensity.compact,
+                            child: Text(
+                              'About App',
+                              style: TextStyle(
+                                color: AppColors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 14.0,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  child: const AboutApp(),
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -150,7 +214,7 @@ class CategoryWidget extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),
         child: Container(
-          height: 88,
+          height: 85,
           decoration: BoxDecoration(
             color: color,
           ),
@@ -184,7 +248,7 @@ class CategoryWidget extends StatelessWidget {
                   Expanded(
                     child: Text(subtitle,
                         style: GoogleFonts.raleway(
-                            fontSize: 15, color: Colors.white)),
+                            fontSize: 12, color: Colors.white)),
                   ),
                 ],
               ),
