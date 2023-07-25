@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:alc_book/src/categories/categories.dart';
+import 'package:alc_book/src/categories/categories_new.dart';
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -313,7 +314,7 @@ class _FirebaseAuthViewState extends State<FirebaseAuthView> {
         context,
         PageTransition(
           type: PageTransitionType.rightToLeft,
-          child: const Categories(),
+          child: const CategoriesNew(),
         ),
         (route) => false,
       );

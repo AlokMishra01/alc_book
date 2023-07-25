@@ -581,7 +581,7 @@ class OurBook extends StatelessWidget {
                         context,
                         PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: const CategoryNew(),
+                          child: const CategoriesNew(),
                         ),
                       );
                     },
