@@ -278,7 +278,7 @@ class BookList {
 
   static final List<BookModel> list4 = [
     BookModel(
-        name: 'नयाँ अनुसन्धान र पुस्तकहरु',
+        name: 'बालबच्चा हुर्काउने तरीका',
         author: '- डा. तिमोथी अर्याल',
         cover: Images.book21,
         book:
@@ -286,7 +286,7 @@ class BookList {
             'com/o/books%2FNew%20Research%20and%20Books%2FChrist%20Centered%20'
             'Parenting%20(Pdf).pdf?alt=media',
         searchWord:
-            'नयाँ अनुसन्धान र पुस्तकहरु naya anusandhan ra pustakharu new research and books'),
+            'बालबच्चा हुर्काउने तरीका baalbachha hurkaune tarika Christ Centered Parenting balbachha hurkaune'),
     BookModel(
         name: 'परमेश्वरलाई पहिलो प्रेम गर्ने ख्रिस्टियन',
         author: '- डा. तिमोथी अर्याल',
