@@ -1,9 +1,11 @@
+import 'package:alc_book/src/categories/categories_new.dart';
 import 'package:alc_book/src/instructions/instructions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'categories/categories.dart';
+import 'constants/books.dart';
 import 'settings/settings_controller.dart';
 
 class MyApp extends StatelessWidget {
@@ -54,7 +56,7 @@ class MyApp extends StatelessWidget {
           // themeMode: settingsController.themeMode,
           // themeMode: settingsController.themeMode,
 
-          home: firstTime ? const Categories() : const Instructions(),
+          home: firstTime ? const CategoriesNew() : const Instructions(),
         );
       },
     );

@@ -63,8 +63,12 @@ class Images {
 
   static String book31 = //Biblical Counseling for Pastor and Leaders
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2FBook%20cover_Biblical%20Counseling%20for%20Pastor%20and%20Leaders.jpg?alt=media&token=13e77db5-b35b-488c-8878-d16cf92ae7c4';
+
+  static String book32 = //Who is King Over Your Life
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2Fking.jpg?alt=media&token=88484969-f377-4d38-a34e-dc6b61619ef7';
+
   static String profile =
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/profile.png?alt=media';
   static String about =
-      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/about.jpg?alt=media';
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/About%20Dr.%20Timothy%2FProfessional%20Background%20of%20Timothy%20Aryal.jpg?alt=media&token=9778a4d6-d873-4654-a01e-8bf3843c34d5';
 }

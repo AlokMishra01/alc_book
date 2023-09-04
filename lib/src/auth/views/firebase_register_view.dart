@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../categories/categories_new.dart';
+
 class FirebaseRegisterView extends StatefulWidget {
   const FirebaseRegisterView({Key? key}) : super(key: key);
 
@@ -749,7 +751,7 @@ class _FirebaseAuthRegisterState extends State<FirebaseRegisterView> {
         context,
         PageTransition(
           type: PageTransitionType.rightToLeft,
-          child: const Categories(),
+          child: const CategoriesNew(),
         ),
         (route) => false,
       );

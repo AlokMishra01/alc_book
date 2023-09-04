@@ -1,0 +1,222 @@
+import 'package:alc_book/src/categories/widgets/search_bar_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
+import '../about/about.dart';
+import '../about/about_app.dart';
+import '../constants/books.dart';
+import '../constants/colors.dart';
+import 'category_books.dart';
+import 'category_form_download.dart';
+import 'category_widget.dart';
+
+class CategoriesNew extends StatelessWidget {
+  const CategoriesNew({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.primary,
+      resizeToAvoidBottomInset: false,
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SizedBox(height: 135),
+              Expanded(
+                child: Container(
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(35),
+                        topRight: Radius.circular(35)),
+                    color: Colors.white,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Category',
+                          style: GoogleFonts.raleway(
+                              fontSize: 30,
+                              color: AppColors.primary,
+                              fontWeight: FontWeight.w900),
+                        ),
+                        const SizedBox(height: 5),
+                        Expanded(
+                          child: ListView(
+                            physics: const BouncingScrollPhysics(),
+                            children: [
+                              CategoryWidget(
+                                title: 'आत्मिक वृद्धि पुस्तकहरू',
+                                subtitle: 'Spiritual Growth Books',
+                                color: AppColors.red,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      child: CategoryBooks(
+                                        title: 'आत्मिक बृद्घि पुस्तकहरू '
+                                            '(Spiritual Growth Books)',
+                                        books: BookList.list1,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              CategoryWidget(
+                                title: 'आत्मिक परिपक्वता पुस्तकहरू',
+                                subtitle: 'Spiritual Maturity Books',
+                                color: AppColors.primary,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      child: CategoryBooks(
+                                        title: 'आत्मिक परिपक्वता पुस्तकहरू '
+                                            '(Spiritual Maturity Books)',
+                                        books: BookList.list2,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              CategoryWidget(
+                                title: 'प्रभावकारी सुसमाचार सामग्रीहरू',
+                                subtitle: 'Effective Evangelism Materials',
+                                color: AppColors.yellow,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      child: CategoryBooks(
+                                        title: 'प्रभावकारी सुसमाचार सामग्रीहरू '
+                                            '(Effective Evangelism Materials)',
+                                        books: BookList.list3,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              CategoryWidget(
+                                title: 'नेतृत्व र परामर्श कलेज',
+                                subtitle: 'Leadership and Counseling College',
+                                color: AppColors.grey,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      child: CategoryFormDownloads(
+                                        title: 'नेतृत्व र परामर्श कलेज '
+                                            '(Leadership and Counseling College)',
+                                        books: BookList.listForms,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              CategoryWidget(
+                                title: 'नयाँ अनुसन्धान र पुस्तकहरु',
+                                subtitle: 'New research and books',
+                                color: AppColors.skyBlue,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      child: CategoryBooks(
+                                        title: 'नयाँ अनुसन्धान र पुस्तकहरु '
+                                            '(New research and books)',
+                                        books: BookList.list4,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              const SizedBox(height: 100),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              MaterialButton(
+                                elevation: 0.0,
+                                color: AppColors.red,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(24.0),
+                                ),
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                                visualDensity: VisualDensity.compact,
+                                child: Text(
+                                  'About Dr. Timothy Aryal',
+                                  style: TextStyle(
+                                    color: AppColors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      child: const About(),
+                                    ),
+                                  );
+                                },
+                              ),
+                              MaterialButton(
+                                elevation: 0.0,
+                                color: AppColors.red,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(24.0),
+                                ),
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                                visualDensity: VisualDensity.compact,
+                                child: Text(
+                                  'About App',
+                                  style: TextStyle(
+                                    color: AppColors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      child: const AboutApp(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+          SearchBarWidget(),
+        ],
+      ),
+    );
+  }
+}

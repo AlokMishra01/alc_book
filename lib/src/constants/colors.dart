@@ -11,4 +11,6 @@ class AppColors {
   static Color textOne = const Color(0xFF126196);
   static Color textTwo = const Color(0xFF5F5C5C);
   static Color textThree = const Color(0xFFCDCDCD);
+  static Color grey = const Color(0xFF9D9378);
+  static Color skyBlue = const Color(0xFF01999C);
 }
