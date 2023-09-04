@@ -58,11 +58,10 @@ class _AboutState extends State<About> {
           if (!status || !Platform.isIOS)
             IconButton(
               onPressed: () {
-                launch(
-                  'https://firebasestorage.googleapis.com/v0/b/timothy-books.'
-                  'appspot.com/o/books%2FLeadership%20%26%20Counseling%20'
-                  'College%2FProfessional%20Background%20of%20Timothy%20'
-                  'Aryal.pdf?alt=media',
+                launchUrl(
+                  Uri.parse(
+                      "https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/About%20Dr.%20Timothy%2FProfessional%20Background%20of%20Timothy%20Aryal.pdf?alt=media&token=1a3a5151-5fee-4e31-a248-c15cd4dffa05"),
+                  mode: LaunchMode.externalApplication,
                 );
               },
               icon: const Icon(
@@ -145,21 +144,23 @@ class _AboutState extends State<About> {
                 // ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: CachedNetworkImage(
-                  placeholder: (_, __) => Container(
-                    width: size.width - 48,
-                    height: size.height - 240,
-                    color: AppColors.textTwo.withOpacity(0.5),
-                    child: Center(
-                      child: CircularProgressIndicator(
-                        color: AppColors.red,
+                  padding: const EdgeInsets.symmetric(horizontal: 0.0),
+                  child: InteractiveViewer(
+                    maxScale: 4,
+                    child: CachedNetworkImage(
+                      placeholder: (_, __) => Container(
+                        width: size.width - 48,
+                        height: size.height - 240,
+                        color: AppColors.textTwo.withOpacity(0.5),
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            color: AppColors.red,
+                          ),
+                        ),
                       ),
+                      imageUrl: Images.about,
                     ),
-                  ),
-                  imageUrl: Images.about,
-                ),
-              ),
+                  )),
               // Expanded(
               //   child: Container(
               //     width: double.infinity,

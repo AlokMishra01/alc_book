@@ -162,7 +162,10 @@ class _AboutAppState extends State<AboutApp> {
                           decoration: TextDecoration.underline,
                         ),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () => launch('https://pjcnepal.org/'),
+                          ..onTap = () => launchUrl(
+                                Uri.parse('https://pjcnepal.org/'),
+                                mode: LaunchMode.externalApplication,
+                              ),
                       ),
                     ],
                   ),
@@ -191,8 +194,10 @@ class _AboutAppState extends State<AboutApp> {
                           decoration: TextDecoration.underline,
                         ),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () => launch(
-                                'https://www.youtube.com/c/LIVINGHOPEJESUS',
+                          ..onTap = () => launchUrl(
+                                Uri.parse(
+                                    'https://www.youtube.com/c/LIVINGHOPEJESUS'),
+                                mode: LaunchMode.externalApplication,
                               ),
                       ),
                     ],
@@ -221,8 +226,10 @@ class _AboutAppState extends State<AboutApp> {
                           decoration: TextDecoration.underline,
                         ),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () => launch(
-                                'https://www.youtube.com/watch?v=NV69xOFX7fQ&ab_channel=Dr.TimothyAryal',
+                          ..onTap = () => launchUrl(
+                                Uri.parse(
+                                    'https://www.youtube.com/@gharelusangati'),
+                                mode: LaunchMode.externalApplication,
                               ),
                       ),
                     ],
@@ -252,8 +259,9 @@ class _AboutAppState extends State<AboutApp> {
                           decoration: TextDecoration.underline,
                         ),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () => launch(
-                                'https://www.ektabooks.com/',
+                          ..onTap = () => launchUrl(
+                                Uri.parse('https://www.ektabooks.com/'),
+                                mode: LaunchMode.externalApplication,
                               ),
                       ),
                     ],

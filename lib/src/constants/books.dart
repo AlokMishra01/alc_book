@@ -2,6 +2,7 @@ import 'package:alc_book/src/constants/images.dart';
 import 'package:alc_book/src/models/book_model.dart';
 
 class BookList {
+  //Spiritual growth books
   static final List<BookModel> list1 = [
     BookModel(
         name: 'पवित्र आत्माको बप्तिस्मा',
@@ -96,6 +97,7 @@ class BookList {
             'पास्टरीय सेवासम्बन्धी महत्त्वपूर्ण शिक्षा र कागजपत्रहरू pastariya sewa sambandhi mahatwapurna sikchya ra kaagajpatraharu Teaching and Papers for Pastoral Ministry'),
   ];
 
+//Spiritual maturity books
   static final List<BookModel> list2 = [
     BookModel(
         name: 'पास्टरीय पुस्तकहरूको विश्लेषण र हाम्रा निम्ति पाठहरू',
@@ -127,7 +129,7 @@ class BookList {
             'Revelation%20%26%20Second%20Coming%20of%20Christ%20(Pdf).pdf?'
             'alt=media',
         searchWord:
-            'प्रकाशको पुस्तक र ख्रिस्टको दोस्रो आगमन prakashko pustak ra khristko doshro aagaman Analysis of Whole Bible & Lesson for Today'),
+            'प्रकाशको पुस्तक र ख्रिस्टको दोस्रो आगमन prakashko pustak ra khristko doshro aagaman Book of Revelation & Second Coming of Christ'),
     BookModel(
         name: 'ख्रिस्ट केन्द्रित बाइबलीय परामर्श',
         author: '- डा. तिमोथी अर्याल',
@@ -190,6 +192,7 @@ class BookList {
             'परमेश्वरको वचन लोगोस र रेमा एवम् मानिसको वचन ग्लोसाका तथ्यहरू parmeshworko bachan logos ra rema ebwam manisko bachan glosaka tathyaharu Mystery about Logos, Rhema and Glossa'),
   ];
 
+//Effective evangalism materials
   static final List<BookModel> list3 = [
     BookModel(
         name: 'लेखकको जीवन गवाही र हामीले जानी राख्नुपर्ने तथ्यहरू !',
@@ -276,6 +279,7 @@ class BookList {
             'वास्तवमा पाप के हो ? अङ्ग्रेजी-पर्चा bastabma paap ke ho angreji-parcha What is Sin english'),
   ];
 
+//New research and books
   static final List<BookModel> list4 = [
     BookModel(
         name: 'बालबच्चा हुर्काउने तरीका',
@@ -315,15 +319,24 @@ class BookList {
         searchWord:
             'तपाईंको जिब्रो समय र पैसामाथि येशूको शासन tapaiko jibro samaye ra paisamathi yeshuko sasan The Kingship of Jesus Over Your Tongue Time & Money'),
     BookModel(
+        name: "Who is King Over Your Life",
+        author: '- डा. तिमोथी अर्याल',
+        cover: Images.book32,
+        book:
+            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FWho%20is%20King%20Over%20Your%20Life.pdf?alt=media&token=091945e1-a859-4158-ba37-3184fd7f779c',
+        searchWord:
+            'तपाईको जीवनको राजा को हो? Who is King Over Your Life tapaiko jeevanko raja ko ho'),
+    BookModel(
         name: 'Biblical Counseling for Pastor and Leaders',
         author: '- डा. तिमोथी अर्याल',
         cover: Images.book31,
         book:
             'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FBiblical%20Counseling%20for%20Pastor%20and%20Leaders.pdf?alt=media&token=5f693119-9f36-42db-ae12-a748dc344f98',
         searchWord:
-            'Biblical Counseling for Pastor and Leaders पास्टर र अगुवाहरूको लागि बाइबलीय परामर्श pastor ra aguwaharuko lagi baibaliya paramarsa')
+            'Biblical Counseling for Pastor and Leaders पास्टर र अगुवाहरूको लागि बाइबलीय परामर्श pastor ra aguwaharuko l agi baibaliya paramarsa'),
   ];
 
+//leadership and counseling college
   static final List<BookModel> listForms = [
     BookModel(
         name: 'Abundant Life Leadership & Counseling College',

@@ -1,14 +1,8 @@
 import 'package:alc_book/src/categories/widgets/search_bar_preview.dart';
 import 'package:alc_book/src/constants/colors.dart';
-import 'package:alc_book/src/models/book_model.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
-import 'package:page_transition/page_transition.dart';
-
-import '../../book_pdf/book_pdf.dart';
-import '../../constants/books.dart';
+import 'package:alc_book/src/constants/books.dart';
 
 class SearchBarWidget extends StatefulWidget {
   SearchBarWidget({super.key});
@@ -62,9 +56,8 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
       debounceDelay: const Duration(milliseconds: 500),
       transition: CircularFloatingSearchBarTransition(),
       automaticallyImplyDrawerHamburger: false,
-      // automaticallyImplyBackButton: false,
+      automaticallyImplyBackButton: false,
       actions: const [],
-
       leadingActions: [
         FloatingSearchBarAction(
           showIfOpened: false,
