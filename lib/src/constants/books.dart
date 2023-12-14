@@ -205,28 +205,28 @@ class BookList {
             '20(Pdf).pdf?alt=media',
         searchWord:
             'लेखकको जीवन गवाही र हामीले जानी राख्नुपर्ने तथ्यहरू lekhakko jeevan gbhahi ra hamile jani rakhnuparne tathyaharu Testimony of Author & Facts of Bible '),
-    BookModel(
-        name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! नेपाली-पुस्तिका',
-        author: '- डा. तिमोथी अर्याल',
-        cover: Images.book19,
-        book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
-            'com/o/books%2FMaterials%20for%20Effective%20Evangelism%20(Royalty%20'
-            'Free)%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(Small%20Pdf).pdf?'
-            'alt=media',
-        searchWord:
-            'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही नेपाली-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi nepali-pustika A psychologist\'s life events and testimony Nepali-book'),
-    BookModel(
-        name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! अङ्ग्रेजी-पुस्तिका',
-        author: '- डा. तिमोथी अर्याल',
-        cover: Images.book20,
-        book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
-            'com/o/books%2FMaterials%20for%20Effective%20Evangelism%20(Royalty%20'
-            'Free)%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(English-Pdf).pdf?'
-            'alt=media',
-        searchWord:
-            'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही अङ्ग्रेजी-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi angreji-pustika A psychologist\'s life events and testimony! English-book'),
+    // BookModel(
+    //     name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! नेपाली-पुस्तिका',
+    //     author: '- डा. तिमोथी अर्याल',
+    //     cover: Images.book19,
+    //     book:
+    //         'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
+    //         'com/o/books%2FMaterials%20for%20Effective%20Evangelism%20(Royalty%20'
+    //         'Free)%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(Small%20Pdf).pdf?'
+    //         'alt=media',
+    //     searchWord:
+    //         'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही नेपाली-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi nepali-pustika A psychologist\'s life events and testimony Nepali-book'),
+    // BookModel(
+    //   name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! अङ्ग्रेजी-पुस्तिका',
+    //   author: '- डा. तिमोथी अर्याल',
+    //   cover: Images.book20,
+    //   book: 'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
+    //       'com/o/books%2FMaterials%20for%20Effective%20Evangelism%20(Royalty%20'
+    //       'Free)%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(English-Pdf).pdf?'
+    //       'alt=media',
+    //   searchWord:
+    //       'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही अङ्ग्रेजी-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi angreji-pustika A psychologist\'s life events and testimony! English-book',
+    // ),
     BookModel(
         name: 'हामीले जानी राख्नुपर्ने तथ्यहरू ! नेपाली-पर्चा',
         author: '- डा. तिमोथी अर्याल',
@@ -338,17 +338,17 @@ class BookList {
 
 //leadership and counseling college
   static final List<BookModel> listForms = [
-    BookModel(
-        name: 'Abundant Life Leadership & Counseling College',
-        author: '(1 Year Package)',
-        cover:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2Funiversity%20icon.jpg?alt=media&token=70a4d0ca-df24-490b-a3cf-d0b1806e02c0',
-        book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
-            'com/o/books%2FLeadership%20%26%20Counseling%20College%2FCollege%20'
-            'Courses%20%26%20Application%20Forms%20(1Year).pdf?alt=media',
-        searchWord:
-            'Abundant Life Leadership & Counseling College प्रसस्त जीवन नेतृत्व र परामर्श कलेज prasastha jeevan netritwa ra paramarsa college 1 Year Package'),
+    // BookModel(
+    //     name: 'Abundant Life Leadership & Counseling College',
+    //     author: '(1 Year Package)',
+    //     cover:
+    //         'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2Funiversity%20icon.jpg?alt=media&token=70a4d0ca-df24-490b-a3cf-d0b1806e02c0',
+    //     book:
+    //         'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
+    //         'com/o/books%2FLeadership%20%26%20Counseling%20College%2FCollege%20'
+    //         'Courses%20%26%20Application%20Forms%20(1Year).pdf?alt=media',
+    //     searchWord:
+    //         'Abundant Life Leadership & Counseling College प्रसस्त जीवन नेतृत्व र परामर्श कलेज prasastha jeevan netritwa ra paramarsa college 1 Year Package'),
     BookModel(
         name: 'Abundant Life Leadership & Counseling College',
         author: '(2 Years Package)',
@@ -360,6 +360,34 @@ class BookList {
             'Courses%20%26%20Application%20Forms%20(2%20Years).pdf?alt=media',
         searchWord:
             'Abundant Life Leadership & Counseling College प्रसस्त जीवन नेतृत्व र परामर्श कलेज prasastha jeevan netritwa ra paramarsa college 2 Years Package'),
+  ];
+
+  static final List<BookModel> list5 = [
+    BookModel(
+        name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! नेपाली-पुस्तिका',
+        author: '- डा. तिमोथी अर्याल',
+        cover: Images.book19,
+        book:
+            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(Nepali).pdf?alt=media&token=174c1da5-393a-4dd7-a25d-125e747d324a',
+        searchWord:
+            'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही नेपाली-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi nepali-pustika A psychologist\'s life events and testimony Nepali-book'),
+    BookModel(
+      name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! अङ्ग्रेजी-पुस्तिका',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book20,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(English).pdf?alt=media&token=3d9bc9ea-9ba8-4233-96b2-e8911b278428',
+      searchWord:
+          'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही अङ्ग्रेजी-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi angreji-pustika A psychologist\'s life events and testimony! English-book',
+    ),
+    BookModel(
+      name: 'James Three Verse by Verse Exposition',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book33,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FJames%20Three%20Verse%20by%20Verse%20Exposition.pdf?alt=media&token=afa260b4-bd93-40f0-b3c5-6f49971adf8d',
+      searchWord: 'James Three Verse by Verse Exposition',
+    ),
   ];
 
   static List<BookModel> allBooks = list1 + list2 + list3 + list4 + listForms;

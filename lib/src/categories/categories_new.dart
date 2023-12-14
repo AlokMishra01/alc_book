@@ -140,6 +140,24 @@ class CategoriesNew extends StatelessWidget {
                                   );
                                 },
                               ),
+                              CategoryWidget(
+                                title: 'प्रभावकारी अध्ययन बानी',
+                                subtitle: 'Effective Study Habits',
+                                color: AppColors.red,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      child: CategoryBooks(
+                                        title: 'नयाँ अनुसन्धान र पुस्तकहरु '
+                                            '(New research and books)',
+                                        books: BookList.list5,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
                               const SizedBox(height: 100),
                             ],
                           ),

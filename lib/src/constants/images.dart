@@ -67,6 +67,9 @@ class Images {
   static String book32 = //Who is King Over Your Life
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2Fking.jpg?alt=media&token=88484969-f377-4d38-a34e-dc6b61619ef7';
 
+  static String book33 = //Who is King Over Your Life
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2Fking.jpg?alt=media&token=88484969-f377-4d38-a34e-dc6b61619ef7';
+
   static String profile =
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/profile.png?alt=media';
   static String about =
