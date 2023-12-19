@@ -362,7 +362,26 @@ class BookList {
             'Abundant Life Leadership & Counseling College प्रसस्त जीवन नेतृत्व र परामर्श कलेज prasastha jeevan netritwa ra paramarsa college 2 Years Package'),
   ];
 
+// Effective Study Habits
   static final List<BookModel> list5 = [
+    BookModel(
+      name: 'Effective Study Habits - English',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book34,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study_English_.pdf?alt=media&token=50855293-2dbb-45dd-baa2-5f3da8bf7b72',
+      searchWord:
+          'Effective Study Habits prabhabkari adhyan bani प्रभावकारी अध्ययन बानी',
+    ),
+    BookModel(
+      name: 'प्रभावकारी अध्ययन बानी - नेपाली',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book35,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study_Nepali_.pdf?alt=media&token=7a38b425-ce6d-4a5d-bd49-bbf2b771ea10',
+      searchWord:
+          'Effective Study Habits prabhabkari adhyan bani प्रभावकारी अध्ययन बानी',
+    ),
     BookModel(
         name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! नेपाली-पुस्तिका',
         author: '- डा. तिमोथी अर्याल',

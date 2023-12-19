@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+// import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class BookPDF extends StatefulWidget {
   final String title;
@@ -45,191 +45,122 @@ class _BookPDFState extends State<BookPDF> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.white,
-        appBar: AppBar(
-          backgroundColor: AppColors.red,
-          titleSpacing: 0.0,
-          leading: IconButton(
-            icon: const Icon(
-              CupertinoIcons.arrow_left,
-            ),
-            onPressed: () => Navigator.pop(context),
+      backgroundColor: AppColors.white,
+      appBar: AppBar(
+        backgroundColor: AppColors.red,
+        titleSpacing: 0.0,
+        leading: IconButton(
+          icon: const Icon(
+            CupertinoIcons.arrow_left,
           ),
-          title: Text(
-            widget.book.name,
-            style: GoogleFonts.khand(
-              color: AppColors.white,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          actions: [
-            if (!status || !Platform.isIOS)
-              IconButton(
-                onPressed: () {
-                  launchUrl(Uri.parse(widget.book.book));
-                },
-                icon: const Icon(
-                  CupertinoIcons.arrow_down_square_fill,
-                ),
-              ),
-            // if (!status || !Platform.isIOS)
-            //   PopupMenuButton(
-            //     icon: const Icon(
-            //       Icons.keyboard_arrow_down_rounded,
-            //     ),
-            //     shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(12.0),
-            //     ),
-            //     onSelected: (value) async {
-            //       switch (value) {
-            //         case 1:
-            //           await FirebaseAuth.instance.signOut();
-            //           final pref = await SharedPreferences.getInstance();
-            //           await pref.setBool('logged', false);
-            //           Navigator.pushAndRemoveUntil(
-            //             context,
-            //             PageTransition(
-            //               type: PageTransitionType.rightToLeft,
-            //               child: const Splash(),
-            //             ),
-            //             (route) => false,
-            //           );
-            //       }
-            //     },
-            //     itemBuilder: (cxt) => [
-            //       PopupMenuItem<int>(
-            //         value: 1,
-            //         child: Text(
-            //           'Log Out',
-            //           style: TextStyle(
-            //             color: AppColors.textTwo,
-            //             fontSize: 14.0,
-            //             fontWeight: FontWeight.w700,
-            //             height: 1.0,
-            //           ),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-          ],
+          onPressed: () => Navigator.pop(context),
         ),
-        body: Scaffold(
-          backgroundColor: AppColors.white,
-          appBar: AppBar(
-            backgroundColor: AppColors.red,
-            titleSpacing: 0.0,
-            leading: IconButton(
+        title: Text(
+          widget.book.name,
+          style: GoogleFonts.khand(
+            color: AppColors.white,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        actions: [
+          if (!status || !Platform.isIOS)
+            IconButton(
+              onPressed: () {
+                launch(widget.book.book);
+              },
               icon: const Icon(
-                CupertinoIcons.arrow_left,
-              ),
-              onPressed: () => Navigator.pop(context),
-            ),
-            title: Text(
-              widget.book.name,
-              style: GoogleFonts.khand(
-                color: AppColors.white,
-                fontWeight: FontWeight.w700,
+                CupertinoIcons.arrow_down_square_fill,
               ),
             ),
-            actions: [
-              if (!status || !Platform.isIOS)
-                IconButton(
-                  onPressed: () {
-                    launch(widget.book.book);
-                  },
-                  icon: const Icon(
-                    CupertinoIcons.arrow_down_square_fill,
-                  ),
-                ),
-              // if (!status || !Platform.isIOS)
-              //   PopupMenuButton(
-              //     icon: const Icon(
-              //       Icons.keyboard_arrow_down_rounded,
-              //     ),
-              //     shape: RoundedRectangleBorder(
-              //       borderRadius: BorderRadius.circular(12.0),
-              //     ),
-              //     onSelected: (value) async {
-              //       switch (value) {
-              //         case 1:
-              //           await FirebaseAuth.instance.signOut();
-              //           final pref = await SharedPreferences.getInstance();
-              //           await pref.setBool('logged', false);
-              //           Navigator.pushAndRemoveUntil(
-              //             context,
-              //             PageTransition(
-              //               type: PageTransitionType.rightToLeft,
-              //               child: const Splash(),
-              //             ),
-              //             (route) => false,
-              //           );
-              //       }
-              //     },
-              //     itemBuilder: (cxt) => [
-              //       PopupMenuItem<int>(
-              //         value: 1,
-              //         child: Text(
-              //           'Log Out',
-              //           style: TextStyle(
-              //             color: AppColors.textTwo,
-              //             fontSize: 14.0,
-              //             fontWeight: FontWeight.w700,
-              //             height: 1.0,
-              //           ),
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-            ],
-          ),
-          body: const PDF(
-            pageSnap: false,
-            enableSwipe: true,
-            pageFling: false,
-          ).cachedFromUrl(
-            widget.book.book,
-            placeholder: (progress) => Center(
-              child: CircularProgressIndicator(
-                value: progress / 100,
-              ),
-            ),
-            errorWidget: (error) => Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.error_rounded,
-                        color: AppColors.red,
-                        size: 64.0,
-                      ),
-                      Text(
-                        error.toString(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: AppColors.red,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          // body: _isLoading
-          //     ? const Center(child: CircularProgressIndicator())
-          //     : PDFViewer(
-          //         document: _document,
-          //         scrollDirection: Axis.vertical,
-          //         enableSwipeNavigation: true,
-          //         lazyLoad: true,
-          //         indicatorBackground: AppColors.red,
-          //         pickerButtonColor: AppColors.red,
+          // if (!status || !Platform.isIOS)
+          //   PopupMenuButton(
+          //     icon: const Icon(
+          //       Icons.keyboard_arrow_down_rounded,
+          //     ),
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(12.0),
+          //     ),
+          //     onSelected: (value) async {
+          //       switch (value) {
+          //         case 1:
+          //           await FirebaseAuth.instance.signOut();
+          //           final pref = await SharedPreferences.getInstance();
+          //           await pref.setBool('logged', false);
+          //           Navigator.pushAndRemoveUntil(
+          //             context,
+          //             PageTransition(
+          //               type: PageTransitionType.rightToLeft,
+          //               child: const Splash(),
+          //             ),
+          //             (route) => false,
+          //           );
+          //       }
+          //     },
+          //     itemBuilder: (cxt) => [
+          //       PopupMenuItem<int>(
+          //         value: 1,
+          //         child: Text(
+          //           'Log Out',
+          //           style: TextStyle(
+          //             color: AppColors.textTwo,
+          //             fontSize: 14.0,
+          //             fontWeight: FontWeight.w700,
+          //             height: 1.0,
+          //           ),
+          //         ),
           //       ),
-        ));
+          //     ],
+          //   ),
+        ],
+      ),
+      body: const PDF(
+        pageSnap: false,
+        enableSwipe: true,
+        pageFling: false,
+      ).cachedFromUrl(
+        widget.book.book,
+        placeholder: (progress) => Center(
+          child: CircularProgressIndicator(
+            value: progress / 100,
+          ),
+        ),
+        errorWidget: (error) => Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.error_rounded,
+                    color: AppColors.red,
+                    size: 64.0,
+                  ),
+                  Text(
+                    error.toString(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: AppColors.red,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+      // body: _isLoading
+      //     ? const Center(child: CircularProgressIndicator())
+      //     : PDFViewer(
+      //         document: _document,
+      //         scrollDirection: Axis.vertical,
+      //         enableSwipeNavigation: true,
+      //         lazyLoad: true,
+      //         indicatorBackground: AppColors.red,
+      //         pickerButtonColor: AppColors.red,
+      //       ),
+    );
   }
 }
 

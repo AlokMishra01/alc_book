@@ -67,8 +67,14 @@ class Images {
   static String book32 = //Who is King Over Your Life
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2Fking.jpg?alt=media&token=88484969-f377-4d38-a34e-dc6b61619ef7';
 
-  static String book33 = //Who is King Over Your Life
-      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2Fking.jpg?alt=media&token=88484969-f377-4d38-a34e-dc6b61619ef7';
+  static String book33 = //James three verse by verse
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2F33.jpg?alt=media&token=0c47f6c3-2fa2-471a-ae21-297307b56282';
+
+  static String book34 = //Effective study habits - eng
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2F34.jpg?alt=media&token=35c72ab8-f29c-4531-b4d0-0efa82303a34';
+
+  static String book35 = //Effective study habits - nep
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2F35.jpg?alt=media&token=2226ddfc-abf1-4285-909a-f0c1f7aeb352';
 
   static String profile =
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/profile.png?alt=media';

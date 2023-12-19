@@ -1,4 +1,5 @@
 import 'package:alc_book/src/categories/widgets/search_bar_widget.dart';
+import 'package:alc_book/src/instructions/instructions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -163,9 +164,9 @@ class CategoriesNew extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.symmetric(vertical: 15),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               MaterialButton(
                                 elevation: 0.0,
@@ -181,7 +182,7 @@ class CategoriesNew extends StatelessWidget {
                                   style: TextStyle(
                                     color: AppColors.white,
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 14.0,
+                                    fontSize: 12.0,
                                   ),
                                 ),
                                 onPressed: () {
@@ -208,7 +209,7 @@ class CategoriesNew extends StatelessWidget {
                                   style: TextStyle(
                                     color: AppColors.white,
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 14.0,
+                                    fontSize: 12.0,
                                   ),
                                 ),
                                 onPressed: () {
@@ -217,6 +218,43 @@ class CategoriesNew extends StatelessWidget {
                                     PageTransition(
                                       type: PageTransitionType.rightToLeft,
                                       child: const AboutApp(),
+                                    ),
+                                  );
+                                },
+                              ),
+                              MaterialButton(
+                                elevation: 0.0,
+                                color: AppColors.red,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(24.0),
+                                ),
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                                visualDensity: VisualDensity.compact,
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'Donate',
+                                      style: TextStyle(
+                                        color: AppColors.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 12.0,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 3),
+                                    const Icon(
+                                      Icons.favorite,
+                                      color: Colors.white,
+                                      size: 16,
+                                    ),
+                                  ],
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      child: const Instructions(),
                                     ),
                                   );
                                 },
