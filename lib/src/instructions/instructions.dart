@@ -41,6 +41,7 @@ class _InstructionsState extends State<Instructions> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
@@ -101,7 +102,7 @@ class _InstructionsState extends State<Instructions> {
                           style: TextStyle(
                             color: AppColors.primary,
                             fontSize: 16.0,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                         TextSpan(
@@ -129,7 +130,7 @@ class _InstructionsState extends State<Instructions> {
                           style: TextStyle(
                             color: AppColors.primary,
                             fontSize: 16.0,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                         TextSpan(
@@ -157,16 +158,16 @@ class _InstructionsState extends State<Instructions> {
                       //     fontWeight: FontWeight.w700,
                       //   ),
                       // ),
-                      const SizedBox(height: 5),
-                      Text(
-                        'Download (Desktop/ios): timothy-books.web.app',
-                        // textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          color: AppColors.primary,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
+                      // const SizedBox(height: 5),
+                      // Text(
+                      //   'Download (Desktop/ios): timothy-books.web.app',
+                      //   // textAlign: TextAlign.justify,
+                      //   style: TextStyle(
+                      //     color: AppColors.primary,
+                      //     fontSize: 16.0,
+                      //     fontWeight: FontWeight.w700,
+                      //   ),
+                      // ),
                       const SizedBox(height: 10),
                       Text(
                         'तपाईंले लेखकको दर्शन र मिसनमा सहयोग गर्न साँचो प्रेरणा पाउनुभयो भने '
@@ -181,7 +182,7 @@ class _InstructionsState extends State<Instructions> {
                       Divider(
                         color: AppColors.textTwo,
                         thickness: 1.0,
-                        height: 36.0,
+                        height: 25.0,
                       ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -196,19 +197,25 @@ class _InstructionsState extends State<Instructions> {
                             ),
                           ),
                           const SizedBox(width: 8.0),
-                          Expanded(
-                            child: GestureDetector(
-                              onTap: () {
-                                Clipboard.setData(const ClipboardData(
-                                  text: 'A/C name: Deesis Aryal\n'
-                                      'Rastriya Banijya Bank\n'
-                                      'Swift Code: RBBANPKA\n'
-                                      'A/C No: 1150100043134010',
-                                ));
-                                SnackbarMessage.message(
-                                    message: 'Details copied',
-                                    context: context);
-                              },
+                          MaterialButton(
+                            elevation: 0.0,
+                            // color: AppColors.primary,
+                            padding: const EdgeInsets.all(5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            // minWidth: double.maxFinite,
+                            onPressed: () {
+                              Clipboard.setData(const ClipboardData(
+                                text: 'A/C name: Deesis Aryal\n'
+                                    'Rastriya Banijya Bank\n'
+                                    'Swift Code: RBBANPKA\n'
+                                    'A/C No: 1150100043134010',
+                              ));
+                              SnackbarMessage.message(
+                                  message: 'Details copied', context: context);
+                            },
+                            child: Expanded(
                               child: Text(
                                 'A/C name: Deesis Aryal\n'
                                 'Rastriya Banijya Bank\n'
@@ -269,18 +276,23 @@ class _InstructionsState extends State<Instructions> {
                             ),
                           ),
                           const SizedBox(width: 8.0),
-                          Expanded(
-                            child: GestureDetector(
-                              onTap: () {
-                                Clipboard.setData(const ClipboardData(
-                                    text: 'A/C name: Tara Aryal\n'
-                                        'Nepal SBI Bank Ltd, Kathmandu\n'
-                                        'Swift Code: NSBINPKA\n'
-                                        'A/C No: 21515243400328'));
-                                SnackbarMessage.message(
-                                    message: 'Details copied',
-                                    context: context);
-                              },
+                          MaterialButton(
+                            elevation: 0.0,
+                            // color: AppColors.primary,
+                            padding: const EdgeInsets.all(5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            onPressed: () {
+                              Clipboard.setData(const ClipboardData(
+                                  text: 'A/C name: Tara Aryal\n'
+                                      'Nepal SBI Bank Ltd, Kathmandu\n'
+                                      'Swift Code: NSBINPKA\n'
+                                      'A/C No: 21515243400328'));
+                              SnackbarMessage.message(
+                                  message: 'Details copied', context: context);
+                            },
+                            child: Expanded(
                               child: Text(
                                 'Tara Aryal\n'
                                 'Nepal SBI Bank Ltd, Kathmandu\n'
@@ -311,25 +323,28 @@ class _InstructionsState extends State<Instructions> {
                             ),
                           ),
                           const SizedBox(width: 8.0),
-                          Expanded(
-                            child: GestureDetector(
-                              onTap: () {
-                                Clipboard.setData(const ClipboardData(
-                                  text: 'A/C name:Sushma Shrestha\n'
-                                      'Esewa/Khalti: 9840841486',
-                                ));
-                                SnackbarMessage.message(
-                                    message: 'Details copied',
-                                    context: context);
-                              },
-                              child: Text(
-                                'Esewa or Khalti\n9840841486\n(Sushma Shrestha)',
-                                textAlign: TextAlign.justify,
-                                style: TextStyle(
-                                  color: AppColors.textTwo,
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.w700,
-                                ),
+                          MaterialButton(
+                            elevation: 0.0,
+                            // color: AppColors.primary,
+                            padding: const EdgeInsets.all(5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            onPressed: () {
+                              Clipboard.setData(const ClipboardData(
+                                text: 'A/C name:Sushma Shrestha\n'
+                                    'Esewa/Khalti: 9840841486',
+                              ));
+                              SnackbarMessage.message(
+                                  message: 'Details copied', context: context);
+                            },
+                            child: Text(
+                              'Esewa or Khalti\n9840841486\n(Sushma Shrestha)',
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                color: AppColors.textTwo,
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w700,
                               ),
                             ),
                           ),
@@ -338,7 +353,17 @@ class _InstructionsState extends State<Instructions> {
                       Divider(
                         color: AppColors.textTwo,
                         thickness: 1.0,
-                        height: 36.0,
+                        height: 25.0,
+                      ),
+                      Text(
+                        'If you receive God\'s direction to participate in the author\'s mission, '
+                        'you can donate to the name mentioned above. Thank you!',
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       // Text(
                       //   'म येसु ख्रिस्टलाई प्रेम गर्ने एउटा समर्पित विश्वासी भएकाले यस App का नियमहरू '
