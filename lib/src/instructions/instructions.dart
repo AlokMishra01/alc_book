@@ -1,10 +1,12 @@
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:alc_book/src/snackbar/snackbar.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../our_books/our_book.dart';
 
@@ -83,7 +85,7 @@ class _InstructionsState extends State<Instructions> {
                       Text(
                         'Books Timothy App मा प्रोफेसर एवम् डा तिमोथी अर्यालले तीस वर्ष भन्दा लामो अध्ययन'
                         ' र अनुसन्धानद्वारा तयार गर्नु भएका उच्च स्तरका थुप्रै पुस्तकहरु छन्।'
-                        ' यी पुस्तकहरुले पठाकज्युको जीवन उचाइमा पुग्न सहयोग गर्ने छन्।',
+                        ' यी पुस्तकहरुले पठाकज्यूको जीवन उचाइमा पुग्न सहयोग गर्ने छन्।',
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           color: AppColors.textTwo,
@@ -92,15 +94,69 @@ class _InstructionsState extends State<Instructions> {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Text(
-                        'Download (Android): Books Timothy',
-                        // textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          color: AppColors.primary,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w700,
+                      RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                          text: 'Download (Android): ',
+                          style: TextStyle(
+                            color: AppColors.primary,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
+                        TextSpan(
+                          text: 'Books Timothy',
+                          style: TextStyle(
+                            color: AppColors.primary,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w600,
+                            decoration: TextDecoration.underline,
+                            // decorationThickness: 2,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () => launchUrl(
+                                  Uri.parse(
+                                      'https://play.google.com/store/apps/details?id=np.com.alokmishra.alc_book&pcampaignid=web_share'),
+                                  mode: LaunchMode.externalApplication,
+                                ),
+                        ),
+                      ])),
+                      const SizedBox(height: 5),
+                      RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                          text: 'Download (Desktop/ios): ',
+                          style: TextStyle(
+                            color: AppColors.primary,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        TextSpan(
+                          text: 'timothy-books.web.app',
+                          style: TextStyle(
+                            color: AppColors.primary,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w600,
+                            decoration: TextDecoration.underline,
+                            // decorationThickness: 2,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () => launchUrl(
+                                  Uri.parse('https://timothy-books.web.app/'),
+                                  mode: LaunchMode.externalApplication,
+                                ),
+                        ),
+                      ])),
+                      // Text(
+                      //   'Download (Android): Books Timothy',
+                      //   // textAlign: TextAlign.justify,
+                      //   style: TextStyle(
+                      //     color: AppColors.primary,
+                      //     fontSize: 16.0,
+                      //     fontWeight: FontWeight.w700,
+                      //   ),
+                      // ),
                       const SizedBox(height: 5),
                       Text(
                         'Download (Desktop/ios): timothy-books.web.app',

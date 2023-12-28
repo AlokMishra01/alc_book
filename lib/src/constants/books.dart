@@ -334,6 +334,14 @@ class BookList {
             'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FBiblical%20Counseling%20for%20Pastor%20and%20Leaders.pdf?alt=media&token=5f693119-9f36-42db-ae12-a748dc344f98',
         searchWord:
             'Biblical Counseling for Pastor and Leaders पास्टर र अगुवाहरूको लागि बाइबलीय परामर्श pastor ra aguwaharuko l agi baibaliya paramarsa'),
+    BookModel(
+      name: 'James Three Verse by Verse Exposition',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book33,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FJames%20Three%20Verse%20by%20Verse%20Exposition.pdf?alt=media&token=d2f412e5-f587-4823-8d83-ec40f863f48a',
+      searchWord: 'James Three Verse by Verse Exposition',
+    ),
   ];
 
 //leadership and counseling college
@@ -369,7 +377,7 @@ class BookList {
       author: '- डा. तिमोथी अर्याल',
       cover: Images.book34,
       book:
-          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study_English_.pdf?alt=media&token=50855293-2dbb-45dd-baa2-5f3da8bf7b72',
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study%20Habits%20(English).pdf?alt=media&token=4f3ff743-776b-46a0-9324-a635f269caa5',
       searchWord:
           'Effective Study Habits prabhabkari adhyan bani प्रभावकारी अध्ययन बानी',
     ),
@@ -378,7 +386,7 @@ class BookList {
       author: '- डा. तिमोथी अर्याल',
       cover: Images.book35,
       book:
-          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study_Nepali_.pdf?alt=media&token=7a38b425-ce6d-4a5d-bd49-bbf2b771ea10',
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study%20Habits%20(Nepali).pdf?alt=media&token=0bf46586-2a61-4e2b-a70c-b5f4f4aa4196',
       searchWord:
           'Effective Study Habits prabhabkari adhyan bani प्रभावकारी अध्ययन बानी',
     ),
@@ -398,14 +406,6 @@ class BookList {
           'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(English).pdf?alt=media&token=3d9bc9ea-9ba8-4233-96b2-e8911b278428',
       searchWord:
           'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही अङ्ग्रेजी-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi angreji-pustika A psychologist\'s life events and testimony! English-book',
-    ),
-    BookModel(
-      name: 'James Three Verse by Verse Exposition',
-      author: '- डा. तिमोथी अर्याल',
-      cover: Images.book33,
-      book:
-          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FJames%20Three%20Verse%20by%20Verse%20Exposition.pdf?alt=media&token=afa260b4-bd93-40f0-b3c5-6f49971adf8d',
-      searchWord: 'James Three Verse by Verse Exposition',
     ),
   ];
 
