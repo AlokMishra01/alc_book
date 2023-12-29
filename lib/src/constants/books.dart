@@ -407,6 +407,15 @@ class BookList {
       searchWord:
           'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही अङ्ग्रेजी-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi angreji-pustika A psychologist\'s life events and testimony! English-book',
     ),
+    BookModel(
+      name: 'स्वस्थ अन्तर्सम्बन्ध र प्रभावकारी नेतृत्व ! नेपाली-पुस्तिका',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book36,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FHelathy%20Relationship%20and%20Effective%20Leadership%20(Nepali%20Book).pdf?alt=media&token=03bc69bc-30f0-4b92-97da-4a2cb72d9942',
+      searchWord:
+          'स्वस्थ अन्तर्सम्बन्ध र प्रभावकारी नेतृत्व ! नेपाली-पुस्तिका swastha antarsambandha ra prabkari netritwa Helathy Relationship and Effective Leadership Nepali Book',
+    ),
   ];
 
   static List<BookModel> allBooks = list1 + list2 + list3 + list4 + listForms;

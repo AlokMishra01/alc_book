@@ -151,8 +151,8 @@ class CategoriesNew extends StatelessWidget {
                                     PageTransition(
                                       type: PageTransitionType.rightToLeft,
                                       child: CategoryBooks(
-                                        title: 'प्रभावकारी अध्ययन बानी'
-                                            'Effective Study Habits',
+                                        title: 'प्रभावकारी अध्ययन बानी '
+                                            '(Effective Study Habits)',
                                         books: BookList.list5,
                                       ),
                                     ),

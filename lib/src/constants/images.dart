@@ -76,6 +76,9 @@ class Images {
   static String book35 = //Effective study habits - nep
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2F35.jpg?alt=media&token=2226ddfc-abf1-4285-909a-f0c1f7aeb352';
 
+  static String book36 = //Helathy Relationship and Effective Leadership- Nep
+      'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2F36.jpg?alt=media&token=d46a6f8c-1583-4296-9fb2-05ef65258033';
+
   static String profile =
       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/profile.png?alt=media';
   static String about =
