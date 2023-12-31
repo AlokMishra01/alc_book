@@ -98,7 +98,7 @@ class _InstructionsState extends State<Instructions> {
                       RichText(
                           text: TextSpan(children: [
                         TextSpan(
-                          text: 'Download (Android): ',
+                          text: 'Play store (Android): ',
                           style: TextStyle(
                             color: AppColors.primary,
                             fontSize: 16.0,
@@ -126,7 +126,7 @@ class _InstructionsState extends State<Instructions> {
                       RichText(
                           text: TextSpan(children: [
                         TextSpan(
-                          text: 'Download (Desktop/ios): ',
+                          text: 'Website (Desktop/ios): ',
                           style: TextStyle(
                             color: AppColors.primary,
                             fontSize: 16.0,

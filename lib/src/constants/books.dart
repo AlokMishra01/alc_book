@@ -205,28 +205,6 @@ class BookList {
             '20(Pdf).pdf?alt=media',
         searchWord:
             'लेखकको जीवन गवाही र हामीले जानी राख्नुपर्ने तथ्यहरू lekhakko jeevan gbhahi ra hamile jani rakhnuparne tathyaharu Testimony of Author & Facts of Bible '),
-    // BookModel(
-    //     name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! नेपाली-पुस्तिका',
-    //     author: '- डा. तिमोथी अर्याल',
-    //     cover: Images.book19,
-    //     book:
-    //         'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
-    //         'com/o/books%2FMaterials%20for%20Effective%20Evangelism%20(Royalty%20'
-    //         'Free)%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(Small%20Pdf).pdf?'
-    //         'alt=media',
-    //     searchWord:
-    //         'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही नेपाली-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi nepali-pustika A psychologist\'s life events and testimony Nepali-book'),
-    // BookModel(
-    //   name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! अङ्ग्रेजी-पुस्तिका',
-    //   author: '- डा. तिमोथी अर्याल',
-    //   cover: Images.book20,
-    //   book: 'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
-    //       'com/o/books%2FMaterials%20for%20Effective%20Evangelism%20(Royalty%20'
-    //       'Free)%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(English-Pdf).pdf?'
-    //       'alt=media',
-    //   searchWord:
-    //       'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही अङ्ग्रेजी-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi angreji-pustika A psychologist\'s life events and testimony! English-book',
-    // ),
     BookModel(
         name: 'हामीले जानी राख्नुपर्ने तथ्यहरू ! नेपाली-पर्चा',
         author: '- डा. तिमोथी अर्याल',
@@ -310,14 +288,14 @@ class BookList {
             'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FBiblical%20Study%20about%20Church%20(Ecclesiology).pdf?alt=media',
         searchWord:
             'चर्चको बनौट प्रशासन र नेतृत्व सम्बन्धी बाइबलीय अध्ययन Ecclesiology churchko banot prasasan ra netritwa sambandhi baibaliya adhyan A biblical study of church structure administration and leadership'),
-    BookModel(
-        name: 'The Kingship of Jesus Over Your Tongue, Time & Money',
-        author: '- डा. तिमोथी अर्याल',
-        cover: Images.book30,
-        book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FKingship%20of%20Jesus%20Over%20Tongue%2C%20Time%20%26%20Money.pdf?alt=media',
-        searchWord:
-            'तपाईंको जिब्रो समय र पैसामाथि येशूको शासन tapaiko jibro samaye ra paisamathi yeshuko sasan The Kingship of Jesus Over Your Tongue Time & Money'),
+    // BookModel(
+    //     name: 'The Kingship of Jesus Over Your Tongue, Time & Money',
+    //     author: '- डा. तिमोथी अर्याल',
+    //     cover: Images.book30,
+    //     book:
+    //         'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FKingship%20of%20Jesus%20Over%20Tongue%2C%20Time%20%26%20Money.pdf?alt=media',
+    //     searchWord:
+    //         'तपाईंको जिब्रो समय र पैसामाथि येशूको शासन tapaiko jibro samaye ra paisamathi yeshuko sasan The Kingship of Jesus Over Your Tongue Time & Money'),
     BookModel(
         name: "Who is King Over Your Life",
         author: '- डा. तिमोथी अर्याल',
@@ -377,7 +355,7 @@ class BookList {
       author: '- डा. तिमोथी अर्याल',
       cover: Images.book34,
       book:
-          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study%20Habits%20(English).pdf?alt=media&token=4f3ff743-776b-46a0-9324-a635f269caa5',
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study%20Habits%20(English).pdf?alt=media&token=7f2a116f-93dd-49a6-8116-a2925ea12d91',
       searchWord:
           'Effective Study Habits prabhabkari adhyan bani प्रभावकारी अध्ययन बानी',
     ),
@@ -386,7 +364,7 @@ class BookList {
       author: '- डा. तिमोथी अर्याल',
       cover: Images.book35,
       book:
-          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study%20Habits%20(Nepali).pdf?alt=media&token=0bf46586-2a61-4e2b-a70c-b5f4f4aa4196',
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study%20Habits%20(Nepali).pdf?alt=media&token=6f4c9cb9-8f1f-404c-85e9-71a1ed617200',
       searchWord:
           'Effective Study Habits prabhabkari adhyan bani प्रभावकारी अध्ययन बानी',
     ),
@@ -395,7 +373,7 @@ class BookList {
         author: '- डा. तिमोथी अर्याल',
         cover: Images.book19,
         book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(Nepali).pdf?alt=media&token=174c1da5-393a-4dd7-a25d-125e747d324a',
+            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(Nepali%20Pdf).pdf?alt=media&token=8c0b9e7c-7924-4c87-9c83-a06e51dbdf9d',
         searchWord:
             'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही नेपाली-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi nepali-pustika A psychologist\'s life events and testimony Nepali-book'),
     BookModel(
@@ -403,7 +381,7 @@ class BookList {
       author: '- डा. तिमोथी अर्याल',
       cover: Images.book20,
       book:
-          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(English).pdf?alt=media&token=3d9bc9ea-9ba8-4233-96b2-e8911b278428',
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(English-Pdf).pdf?alt=media&token=b6a52a89-1d9b-491a-9e32-3e3d29840ed4',
       searchWord:
           'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही अङ्ग्रेजी-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi angreji-pustika A psychologist\'s life events and testimony! English-book',
     ),
@@ -412,7 +390,7 @@ class BookList {
       author: '- डा. तिमोथी अर्याल',
       cover: Images.book36,
       book:
-          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FHelathy%20Relationship%20and%20Effective%20Leadership%20(Nepali%20Book).pdf?alt=media&token=03bc69bc-30f0-4b92-97da-4a2cb72d9942',
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FHelathy%20Relationship%20and%20Effective%20Leadership%20(Nepali%20Book).pdf?alt=media&token=657aa702-b507-4693-9381-6fd741ef1719',
       searchWord:
           'स्वस्थ अन्तर्सम्बन्ध र प्रभावकारी नेतृत्व ! नेपाली-पुस्तिका swastha antarsambandha ra prabkari netritwa Helathy Relationship and Effective Leadership Nepali Book',
     ),
