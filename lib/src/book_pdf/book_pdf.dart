@@ -42,6 +42,9 @@ class _BookPDFState extends State<BookPDF> {
     setState(() {});
   }
 
+  // late PDFViewController _pdfViewController;
+  // int currentPage = 1; // Set the initial page number
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +69,7 @@ class _BookPDFState extends State<BookPDF> {
           if (!status || !Platform.isIOS)
             IconButton(
               onPressed: () {
+                // _pdfViewController.setPage(12);
                 launch(widget.book.book);
               },
               icon: const Icon(
@@ -113,10 +117,17 @@ class _BookPDFState extends State<BookPDF> {
           //   ),
         ],
       ),
-      body: const PDF(
+      body: PDF(
         pageSnap: false,
         enableSwipe: true,
-        pageFling: false,
+        // onPageChanged: (page, total) {
+        //   setState(() {
+        //     currentPage = page!;
+        //   });
+        // },
+        // onViewCreated: (PDFViewController pdfViewController) {
+        //   _pdfViewController = pdfViewController;
+        // },
       ).cachedFromUrl(
         widget.book.book,
         placeholder: (progress) => Center(

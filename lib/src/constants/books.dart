@@ -288,14 +288,6 @@ class BookList {
             'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FBiblical%20Study%20about%20Church%20(Ecclesiology).pdf?alt=media',
         searchWord:
             'चर्चको बनौट प्रशासन र नेतृत्व सम्बन्धी बाइबलीय अध्ययन Ecclesiology churchko banot prasasan ra netritwa sambandhi baibaliya adhyan A biblical study of church structure administration and leadership'),
-    // BookModel(
-    //     name: 'The Kingship of Jesus Over Your Tongue, Time & Money',
-    //     author: '- डा. तिमोथी अर्याल',
-    //     cover: Images.book30,
-    //     book:
-    //         'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FKingship%20of%20Jesus%20Over%20Tongue%2C%20Time%20%26%20Money.pdf?alt=media',
-    //     searchWord:
-    //         'तपाईंको जिब्रो समय र पैसामाथि येशूको शासन tapaiko jibro samaye ra paisamathi yeshuko sasan The Kingship of Jesus Over Your Tongue Time & Money'),
     BookModel(
         name: "Who is King Over Your Life",
         author: '- डा. तिमोथी अर्याल',
@@ -312,29 +304,18 @@ class BookList {
             'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FBiblical%20Counseling%20for%20Pastor%20and%20Leaders.pdf?alt=media&token=5f693119-9f36-42db-ae12-a748dc344f98',
         searchWord:
             'Biblical Counseling for Pastor and Leaders पास्टर र अगुवाहरूको लागि बाइबलीय परामर्श pastor ra aguwaharuko l agi baibaliya paramarsa'),
-    BookModel(
-      name: 'James Three Verse by Verse Exposition',
-      author: '- डा. तिमोथी अर्याल',
-      cover: Images.book33,
-      book:
-          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FJames%20Three%20Verse%20by%20Verse%20Exposition.pdf?alt=media&token=d2f412e5-f587-4823-8d83-ec40f863f48a',
-      searchWord: 'James Three Verse by Verse Exposition',
-    ),
+    // BookModel(
+    //   name: 'James Three Verse by Verse Exposition',
+    //   author: '- डा. तिमोथी अर्याल',
+    //   cover: Images.book33,
+    //   book:
+    //       'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FJames%20Three%20Verse%20by%20Verse%20Exposition.pdf?alt=media&token=d2f412e5-f587-4823-8d83-ec40f863f48a',
+    //   searchWord: 'James Three Verse by Verse Exposition',
+    // ),
   ];
 
 //leadership and counseling college
   static final List<BookModel> listForms = [
-    // BookModel(
-    //     name: 'Abundant Life Leadership & Counseling College',
-    //     author: '(1 Year Package)',
-    //     cover:
-    //         'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2Funiversity%20icon.jpg?alt=media&token=70a4d0ca-df24-490b-a3cf-d0b1806e02c0',
-    //     book:
-    //         'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
-    //         'com/o/books%2FLeadership%20%26%20Counseling%20College%2FCollege%20'
-    //         'Courses%20%26%20Application%20Forms%20(1Year).pdf?alt=media',
-    //     searchWord:
-    //         'Abundant Life Leadership & Counseling College प्रसस्त जीवन नेतृत्व र परामर्श कलेज prasastha jeevan netritwa ra paramarsa college 1 Year Package'),
     BookModel(
         name: 'Abundant Life Leadership & Counseling College',
         author: '(2 Years Package)',
