@@ -206,28 +206,6 @@ class BookList {
         searchWord:
             'लेखकको जीवन गवाही र हामीले जानी राख्नुपर्ने तथ्यहरू lekhakko jeevan gbhahi ra hamile jani rakhnuparne tathyaharu Testimony of Author & Facts of Bible '),
     BookModel(
-        name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! नेपाली-पुस्तिका',
-        author: '- डा. तिमोथी अर्याल',
-        cover: Images.book19,
-        book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
-            'com/o/books%2FMaterials%20for%20Effective%20Evangelism%20(Royalty%20'
-            'Free)%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(Small%20Pdf).pdf?'
-            'alt=media',
-        searchWord:
-            'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही नेपाली-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi nepali-pustika A psychologist\'s life events and testimony Nepali-book'),
-    BookModel(
-        name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! अङ्ग्रेजी-पुस्तिका',
-        author: '- डा. तिमोथी अर्याल',
-        cover: Images.book20,
-        book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
-            'com/o/books%2FMaterials%20for%20Effective%20Evangelism%20(Royalty%20'
-            'Free)%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(English-Pdf).pdf?'
-            'alt=media',
-        searchWord:
-            'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही अङ्ग्रेजी-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi angreji-pustika A psychologist\'s life events and testimony! English-book'),
-    BookModel(
         name: 'हामीले जानी राख्नुपर्ने तथ्यहरू ! नेपाली-पर्चा',
         author: '- डा. तिमोथी अर्याल',
         cover: Images.book22,
@@ -292,16 +270,6 @@ class BookList {
         searchWord:
             'बालबच्चा हुर्काउने तरीका baalbachha hurkaune tarika Christ Centered Parenting balbachha hurkaune'),
     BookModel(
-        name: 'परमेश्वरलाई पहिलो प्रेम गर्ने ख्रिस्टियन',
-        author: '- डा. तिमोथी अर्याल',
-        cover: Images.book28,
-        book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
-            'com/o/books%2FNew%20Research%20and%20Books%2FA%20Christian%20who%20'
-            'Loves%20God%20First.pdf?alt=media',
-        searchWord:
-            'परमेश्वरलाई पहिलो प्रेम गर्ने ख्रिस्टियन parmeshworlai pahilo prem garne khristiyan jeevan A Christian who Loves God First'),
-    BookModel(
         name:
             'चर्चको बनौट, प्रशासन र नेतृत्व सम्बन्धी बाइबलीय अध्ययन (Ecclesiology)',
         author: '- डा. तिमोथी अर्याल',
@@ -311,44 +279,102 @@ class BookList {
         searchWord:
             'चर्चको बनौट प्रशासन र नेतृत्व सम्बन्धी बाइबलीय अध्ययन Ecclesiology churchko banot prasasan ra netritwa sambandhi baibaliya adhyan A biblical study of church structure administration and leadership'),
     BookModel(
-        name: 'The Kingship of Jesus Over Your Tongue, Time & Money',
-        author: '- डा. तिमोथी अर्याल',
-        cover: Images.book30,
-        book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FKingship%20of%20Jesus%20Over%20Tongue%2C%20Time%20%26%20Money.pdf?alt=media',
-        searchWord:
-            'तपाईंको जिब्रो समय र पैसामाथि येशूको शासन tapaiko jibro samaye ra paisamathi yeshuko sasan The Kingship of Jesus Over Your Tongue Time & Money'),
+      name: 'James Three Verse by Verse Exposition',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book33,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FJames%20Three%20Verse%20by%20Verse%20Exposition.pdf?alt=media&token=41047bce-c884-433e-afd0-a47983bd3f26',
+      searchWord:
+          'James Three Verse by Verse Exposition याकुब तीन अध्यायको अध्यन yakub tin adhyayeko adhyan',
+    ),
+  ];
+
+// Effective Study Habits
+  static final List<BookModel> list5 = [
     BookModel(
-        name: "Who is King Over Your Life",
+      name: 'Effective Study Habits - English',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book34,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study%20Habits%20(English).pdf?alt=media&token=7f2a116f-93dd-49a6-8116-a2925ea12d91',
+      searchWord:
+          'Effective Study Habits prabhabkari adhyan bani प्रभावकारी अध्ययन बानी',
+    ),
+    BookModel(
+      name: 'प्रभावकारी अध्ययन बानी - नेपाली',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book35,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FEffective%20Study%20Habits%20(Nepali).pdf?alt=media&token=6f4c9cb9-8f1f-404c-85e9-71a1ed617200',
+      searchWord:
+          'Effective Study Habits prabhabkari adhyan bani प्रभावकारी अध्ययन बानी',
+    ),
+    BookModel(
+        name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! नेपाली-पुस्तिका',
         author: '- डा. तिमोथी अर्याल',
-        cover: Images.book32,
+        cover: Images.book19,
         book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FWho%20is%20King%20Over%20Your%20Life.pdf?alt=media&token=091945e1-a859-4158-ba37-3184fd7f779c',
+            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(Nepali%20Pdf).pdf?alt=media&token=8c0b9e7c-7924-4c87-9c83-a06e51dbdf9d',
         searchWord:
-            'तपाईको जीवनको राजा को हो? Who is King Over Your Life tapaiko jeevanko raja ko ho'),
+            'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही नेपाली-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi nepali-pustika A psychologist\'s life events and testimony Nepali-book'),
+    BookModel(
+      name: 'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही ! अङ्ग्रेजी-पुस्तिका',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book20,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FTestimony%20of%20Dr.%20Timothy%20Aryal%20(English-Pdf).pdf?alt=media&token=b6a52a89-1d9b-491a-9e32-3e3d29840ed4',
+      searchWord:
+          'एउटा मनोविज्ञकोे जीवनका घटनाहरू र गवाही अङ्ग्रेजी-पुस्तिका euta manobigyako jeevanka ghatanaharu ra gabahi angreji-pustika A psychologist\'s life events and testimony! English-book',
+    ),
+    BookModel(
+      name: 'स्वस्थ अन्तर्सम्बन्ध र प्रभावकारी नेतृत्व ! नेपाली-पुस्तिका',
+      author: '- डा. तिमोथी अर्याल',
+      cover: Images.book36,
+      book:
+          'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Study%20Habits%2FHelathy%20Relationship%20and%20Effective%20Leadership%20(Nepali%20Book).pdf?alt=media&token=657aa702-b507-4693-9381-6fd741ef1719',
+      searchWord:
+          'स्वस्थ अन्तर्सम्बन्ध र प्रभावकारी नेतृत्व ! नेपाली-पुस्तिका swastha antarsambandha ra prabkari netritwa Helathy Relationship and Effective Leadership Nepali Book',
+    ),
+  ];
+
+  //New books Timothy Aryal 2080
+  static final List<BookModel> list6 = [
+    BookModel(
+        name: "Beware of the Seven Kinds of Wrong People",
+        author: '- डा. तिमोथी अर्याल',
+        cover: Images.book37,
+        book:
+            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Books%20Timothy%20Aryal-2080%2FEKTA%20Beware%20from%20the%20Teachings%20of%207%20Wicked%20People.pdf?alt=media&token=606f58a2-2dee-4574-a21e-e0149e922fe0',
+        searchWord:
+            'Beware of the Seven Kinds of Wrong People सात प्रकारका गलत व्यक्तिहरू देखि होसियार saat prakaarka galat bektiharu dekhi hosiyaar'),
     BookModel(
         name: 'Biblical Counseling for Pastor and Leaders',
         author: '- डा. तिमोथी अर्याल',
         cover: Images.book31,
         book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Research%20and%20Books%2FBiblical%20Counseling%20for%20Pastor%20and%20Leaders.pdf?alt=media&token=5f693119-9f36-42db-ae12-a748dc344f98',
+            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Books%20Timothy%20Aryal-2080%2FEKTA%20Biblical%20Counseling%20for%20Pastor%20and%20Leaders.pdf?alt=media&token=82a335a2-555f-459b-b8e6-470fcdf351af',
         searchWord:
             'Biblical Counseling for Pastor and Leaders पास्टर र अगुवाहरूको लागि बाइबलीय परामर्श pastor ra aguwaharuko l agi baibaliya paramarsa'),
+    BookModel(
+        name: 'परमेश्वरलाई पहिलो प्रेम गर्ने ख्रिस्टियन',
+        author: '- डा. तिमोथी अर्याल',
+        cover: Images.book28,
+        book:
+            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Books%20Timothy%20Aryal-2080%2FEKTA%20A%20Christian%20who%20Loves%20God%20First.pdf?alt=media&token=6cd854b4-77cb-4a0f-92e2-0b984433a01a',
+        searchWord:
+            'परमेश्वरलाई पहिलो प्रेम गर्ने ख्रिस्टियन parmeshworlai pahilo prem garne khristiyan jeevan A Christian who Loves God First'),
+    BookModel(
+        name: "Who is King Over Your Life",
+        author: '- डा. तिमोथी अर्याल',
+        cover: Images.book32,
+        book:
+            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FNew%20Books%20Timothy%20Aryal-2080%2FEKTA%20Who%20is%20King%20Over%20Your%20Life.pdf?alt=media&token=818eac13-b5db-4178-91e9-36ea1ea9a5a2',
+        searchWord:
+            'तपाईको जीवनको राजा को हो? Who is King Over Your Life tapaiko jeevanko raja ko ho'),
   ];
 
-//leadership and counseling college
+  //leadership and counseling college
   static final List<BookModel> listForms = [
-    BookModel(
-        name: 'Abundant Life Leadership & Counseling College',
-        author: '(1 Year Package)',
-        cover:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/covers%2Funiversity%20icon.jpg?alt=media&token=70a4d0ca-df24-490b-a3cf-d0b1806e02c0',
-        book:
-            'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.'
-            'com/o/books%2FLeadership%20%26%20Counseling%20College%2FCollege%20'
-            'Courses%20%26%20Application%20Forms%20(1Year).pdf?alt=media',
-        searchWord:
-            'Abundant Life Leadership & Counseling College प्रसस्त जीवन नेतृत्व र परामर्श कलेज prasastha jeevan netritwa ra paramarsa college 1 Year Package'),
     BookModel(
         name: 'Abundant Life Leadership & Counseling College',
         author: '(2 Years Package)',
@@ -362,5 +388,6 @@ class BookList {
             'Abundant Life Leadership & Counseling College प्रसस्त जीवन नेतृत्व र परामर्श कलेज prasastha jeevan netritwa ra paramarsa college 2 Years Package'),
   ];
 
-  static List<BookModel> allBooks = list1 + list2 + list3 + list4 + listForms;
+  static List<BookModel> allBooks =
+      list1 + list2 + list3 + list4 + list5 + list6 + listForms;
 }

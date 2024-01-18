@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
           // themeMode: settingsController.themeMode,
           // themeMode: settingsController.themeMode,
 
-          home: firstTime ? const CategoriesNew() : const Instructions(),
+          home: const CategoriesNew(),
         );
       },
     );

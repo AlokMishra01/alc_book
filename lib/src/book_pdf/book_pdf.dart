@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+// import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class BookPDF extends StatefulWidget {
   final String title;
@@ -41,6 +42,9 @@ class _BookPDFState extends State<BookPDF> {
     setState(() {});
   }
 
+  // late PDFViewController _pdfViewController;
+  // int currentPage = 1; // Set the initial page number
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,6 +69,7 @@ class _BookPDFState extends State<BookPDF> {
           if (!status || !Platform.isIOS)
             IconButton(
               onPressed: () {
+                // _pdfViewController.setPage(12);
                 launch(widget.book.book);
               },
               icon: const Icon(
@@ -112,10 +117,17 @@ class _BookPDFState extends State<BookPDF> {
           //   ),
         ],
       ),
-      body: const PDF(
+      body: PDF(
         pageSnap: false,
         enableSwipe: true,
-        pageFling: false,
+        // onPageChanged: (page, total) {
+        //   setState(() {
+        //     currentPage = page!;
+        //   });
+        // },
+        // onViewCreated: (PDFViewController pdfViewController) {
+        //   _pdfViewController = pdfViewController;
+        // },
       ).cachedFromUrl(
         widget.book.book,
         placeholder: (progress) => Center(
@@ -162,3 +174,33 @@ class _BookPDFState extends State<BookPDF> {
     );
   }
 }
+
+// to test this put it to the body of the scaffold
+// SfPdfViewer.network(
+// widget.book.book,
+// onDocumentLoadFailed: (error) => Center(
+// child: Padding(
+// padding: const EdgeInsets.all(8.0),
+// child: Center(
+// child: Column(
+// mainAxisAlignment: MainAxisAlignment.center,
+// children: [
+// Icon(
+// Icons.error_rounded,
+// color: AppColors.red,
+// size: 64.0,
+// ),
+// Text(
+// error.toString(),
+// textAlign: TextAlign.center,
+// style: TextStyle(
+// color: AppColors.red,
+// fontWeight: FontWeight.w600,
+// ),
+// ),
+// ],
+// ),
+// ),
+// ),
+// ),
+// ),
