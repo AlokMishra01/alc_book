@@ -48,119 +48,141 @@ class CategoriesNew extends StatelessWidget {
                         ),
                         const SizedBox(height: 5),
                         Expanded(
-                          child: ListView(
+                          child: SingleChildScrollView(
                             physics: const BouncingScrollPhysics(),
-                            children: [
-                              CategoryWidget(
-                                title: 'आत्मिक वृद्धि पुस्तकहरू',
-                                subtitle: 'Spiritual Growth Books',
-                                color: AppColors.red,
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.rightToLeft,
-                                      child: CategoryBooks(
-                                        title: 'आत्मिक बृद्घि पुस्तकहरू '
-                                            '(Spiritual Growth Books)',
-                                        books: BookList.list1,
+                            child: Column(
+                              children: [
+                                CategoryWidget(
+                                  title: 'आत्मिक वृद्धि पुस्तकहरू',
+                                  subtitle: 'Spiritual Growth Books',
+                                  color: AppColors.red,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: CategoryBooks(
+                                          title: 'आत्मिक बृद्घि पुस्तकहरू '
+                                              '(Spiritual Growth Books)',
+                                          books: BookList.list1,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                              ),
-                              CategoryWidget(
-                                title: 'आत्मिक परिपक्वता पुस्तकहरू',
-                                subtitle: 'Spiritual Maturity Books',
-                                color: AppColors.primary,
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.rightToLeft,
-                                      child: CategoryBooks(
-                                        title: 'आत्मिक परिपक्वता पुस्तकहरू '
-                                            '(Spiritual Maturity Books)',
-                                        books: BookList.list2,
+                                    );
+                                  },
+                                ),
+                                CategoryWidget(
+                                  title: 'आत्मिक परिपक्वता पुस्तकहरू',
+                                  subtitle: 'Spiritual Maturity Books',
+                                  color: AppColors.primary,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: CategoryBooks(
+                                          title: 'आत्मिक परिपक्वता पुस्तकहरू '
+                                              '(Spiritual Maturity Books)',
+                                          books: BookList.list2,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                              ),
-                              CategoryWidget(
-                                title: 'प्रभावकारी सुसमाचार सामग्रीहरू',
-                                subtitle: 'Effective Evangelism Materials',
-                                color: AppColors.yellow,
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.rightToLeft,
-                                      child: CategoryBooks(
-                                        title: 'प्रभावकारी सुसमाचार सामग्रीहरू '
-                                            '(Effective Evangelism Materials)',
-                                        books: BookList.list3,
+                                    );
+                                  },
+                                ),
+                                CategoryWidget(
+                                  title: 'प्रभावकारी सुसमाचार सामग्रीहरू',
+                                  subtitle: 'Effective Evangelism Materials',
+                                  color: AppColors.yellow,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: CategoryBooks(
+                                          title:
+                                              'प्रभावकारी सुसमाचार सामग्रीहरू '
+                                              '(Effective Evangelism Materials)',
+                                          books: BookList.list3,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                              ),
-                              CategoryWidget(
-                                title: 'नेतृत्व र परामर्श कलेज',
-                                subtitle: 'Leadership and Counseling College',
-                                color: AppColors.grey,
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.rightToLeft,
-                                      child: CategoryFormDownloads(
-                                        title: 'नेतृत्व र परामर्श कलेज '
-                                            '(Leadership and Counseling College)',
-                                        books: BookList.listForms,
+                                    );
+                                  },
+                                ),
+                                CategoryWidget(
+                                  title: 'नयाँ अनुसन्धान र पुस्तकहरु',
+                                  subtitle: 'New research and books',
+                                  color: AppColors.skyBlue,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: CategoryBooks(
+                                          title: 'नयाँ अनुसन्धान र पुस्तकहरु '
+                                              '(New research and books)',
+                                          books: BookList.list4,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                              ),
-                              CategoryWidget(
-                                title: 'नयाँ अनुसन्धान र पुस्तकहरु',
-                                subtitle: 'New research and books',
-                                color: AppColors.skyBlue,
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.rightToLeft,
-                                      child: CategoryBooks(
-                                        title: 'नयाँ अनुसन्धान र पुस्तकहरु '
-                                            '(New research and books)',
-                                        books: BookList.list4,
+                                    );
+                                  },
+                                ),
+                                CategoryWidget(
+                                  title: 'प्रभावकारी अध्ययन बानी',
+                                  subtitle: 'Effective Study Habits',
+                                  color: AppColors.red,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: CategoryBooks(
+                                          title: 'प्रभावकारी अध्ययन बानी '
+                                              '(Effective Study Habits)',
+                                          books: BookList.list5,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                              ),
-                              CategoryWidget(
-                                title: 'प्रभावकारी अध्ययन बानी',
-                                subtitle: 'Effective Study Habits',
-                                color: AppColors.red,
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.rightToLeft,
-                                      child: CategoryBooks(
-                                        title: 'प्रभावकारी अध्ययन बानी '
-                                            '(Effective Study Habits)',
-                                        books: BookList.list5,
+                                    );
+                                  },
+                                ),
+                                CategoryWidget(
+                                  title: 'नयाँ पुस्तकहरू तिमोथी अर्याल-२०८०',
+                                  subtitle: 'New Books Timothy Aryal-2080',
+                                  color: AppColors.primary,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: CategoryBooks(
+                                          title:
+                                              'नयाँ पुस्तकहरू तिमोथी अर्याल-२०८० '
+                                              '(New Books Timothy Aryal-2080)',
+                                          books: BookList.list6,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                              ),
-                              const SizedBox(height: 100),
-                            ],
+                                    );
+                                  },
+                                ),
+                                CategoryWidget(
+                                  title: 'नेतृत्व र परामर्श कलेज',
+                                  subtitle: 'Leadership and Counseling College',
+                                  color: AppColors.grey,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: CategoryFormDownloads(
+                                          title: 'नेतृत्व र परामर्श कलेज '
+                                              '(Leadership and Counseling College)',
+                                          books: BookList.listForms,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                                const SizedBox(height: 100),
+                              ],
+                            ),
                           ),
                         ),
                         Padding(

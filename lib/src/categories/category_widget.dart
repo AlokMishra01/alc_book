@@ -36,6 +36,7 @@ class CategoryWidget extends StatelessWidget {
                 children: [
                   Text(
                     title,
+                    overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.raleway(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
