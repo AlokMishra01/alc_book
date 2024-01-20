@@ -26,6 +26,9 @@ class BookPDF extends StatefulWidget {
 
 class _BookPDFState extends State<BookPDF> {
   bool status = true;
+  late PDFViewController _pdfViewController;
+  final TextEditingController _pageNumberController = TextEditingController();
+  int? totalPages;
 
   @override
   void initState() {
@@ -42,11 +45,16 @@ class _BookPDFState extends State<BookPDF> {
     setState(() {});
   }
 
-  // late PDFViewController _pdfViewController;
-  // int currentPage = 1; // Set the initial page number
+  @override
+  void dispose() {
+    _pageNumberController.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
@@ -69,7 +77,6 @@ class _BookPDFState extends State<BookPDF> {
           if (!status || !Platform.isIOS)
             IconButton(
               onPressed: () {
-                // _pdfViewController.setPage(12);
                 launch(widget.book.book);
               },
               icon: const Icon(
@@ -117,50 +124,109 @@ class _BookPDFState extends State<BookPDF> {
           //   ),
         ],
       ),
-      body: PDF(
-        pageSnap: false,
-        enableSwipe: true,
-        // onPageChanged: (page, total) {
-        //   setState(() {
-        //     currentPage = page!;
-        //   });
-        // },
-        // onViewCreated: (PDFViewController pdfViewController) {
-        //   _pdfViewController = pdfViewController;
-        // },
-      ).cachedFromUrl(
-        widget.book.book,
-        placeholder: (progress) => Center(
-          child: CircularProgressIndicator(
-            value: progress / 100,
-          ),
-        ),
-        errorWidget: (error) => Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.error_rounded,
-                    color: AppColors.red,
-                    size: 64.0,
+      body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        // Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: Container(
+        //     // height: 40,
+        //     width: width / 4.2,
+        //     decoration: BoxDecoration(
+        //       color: AppColors.background,
+        //       borderRadius: BorderRadius.circular(8),
+        //     ),
+        //     child: Row(
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       children: [
+        //         Padding(
+        //           padding: const EdgeInsets.all(5.0),
+        //           child: SizedBox(
+        //             width: width / 9,
+        //             height: 40,
+        //             child: TextFormField(
+        //               // initialValue: '0',
+        //               scrollPadding: EdgeInsets.zero,
+        //               keyboardType: TextInputType.number,
+        //               controller: _pageNumberController,
+        //               style: TextStyle(fontSize: 12, color: Colors.black),
+        //               onTapOutside: (pointerDownEvent) {
+        //                 FocusScopeNode currentFocus = FocusScope.of(context);
+        //                 if (!currentFocus.hasPrimaryFocus &&
+        //                     currentFocus.focusedChild != null) {
+        //                   currentFocus.focusedChild?.unfocus();
+        //                 }
+        //               },
+        //               onFieldSubmitted: (_) {
+        //                 int goToPage =
+        //                     int.parse(_pageNumberController.text) - 1;
+        //                 _pdfViewController.setPage(goToPage);
+        //               },
+        //               decoration: InputDecoration(
+        //                 enabledBorder: OutlineInputBorder(
+        //                   borderSide: BorderSide(color: AppColors.primary),
+        //                   borderRadius: BorderRadius.circular(8),
+        //                 ),
+        //                 focusedBorder: OutlineInputBorder(
+        //                   borderSide: BorderSide(color: AppColors.primary),
+        //                   borderRadius: BorderRadius.circular(8),
+        //                 ),
+        //               ),
+        //             ),
+        //           ),
+        //         ),
+        //         Text('of ${totalPages == null ? '' : '$totalPages'}'),
+        //         SizedBox(width: 5)
+        //       ],
+        //     ),
+        //   ),
+        // ),
+        Expanded(
+          child: PDF(
+              fitEachPage: false,
+              pageSnap: false,
+              pageFling: false,
+              // gestureRecognizers: ,
+              onViewCreated: (PDFViewController pdfViewController) {
+                _pdfViewController = pdfViewController;
+              },
+              onRender: (total) {
+                setState(() {
+                  totalPages = total;
+                });
+              }).cachedFromUrl(
+            widget.book.book,
+            placeholder: (progress) => Center(
+              child: CircularProgressIndicator(
+                value: progress / 100,
+              ),
+            ),
+            errorWidget: (error) => Center(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.error_rounded,
+                        color: AppColors.red,
+                        size: 64.0,
+                      ),
+                      Text(
+                        error.toString(),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: AppColors.red,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    error.toString(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: AppColors.red,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ),
         ),
-      ),
+      ]),
       // body: _isLoading
       //     ? const Center(child: CircularProgressIndicator())
       //     : PDFViewer(
@@ -174,33 +240,3 @@ class _BookPDFState extends State<BookPDF> {
     );
   }
 }
-
-// to test this put it to the body of the scaffold
-// SfPdfViewer.network(
-// widget.book.book,
-// onDocumentLoadFailed: (error) => Center(
-// child: Padding(
-// padding: const EdgeInsets.all(8.0),
-// child: Center(
-// child: Column(
-// mainAxisAlignment: MainAxisAlignment.center,
-// children: [
-// Icon(
-// Icons.error_rounded,
-// color: AppColors.red,
-// size: 64.0,
-// ),
-// Text(
-// error.toString(),
-// textAlign: TextAlign.center,
-// style: TextStyle(
-// color: AppColors.red,
-// fontWeight: FontWeight.w600,
-// ),
-// ),
-// ],
-// ),
-// ),
-// ),
-// ),
-// ),

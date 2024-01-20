@@ -143,25 +143,25 @@ class CategoriesNew extends StatelessWidget {
                                     );
                                   },
                                 ),
-                                CategoryWidget(
-                                  title: 'नयाँ पुस्तकहरू तिमोथी अर्याल-२०८०',
-                                  subtitle: 'New Books Timothy Aryal-2080',
-                                  color: AppColors.primary,
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      PageTransition(
-                                        type: PageTransitionType.rightToLeft,
-                                        child: CategoryBooks(
-                                          title:
-                                              'नयाँ पुस्तकहरू तिमोथी अर्याल-२०८० '
-                                              '(New Books Timothy Aryal-2080)',
-                                          books: BookList.list6,
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                ),
+                                // CategoryWidget(
+                                //   title: 'नयाँ पुस्तकहरू तिमोथी अर्याल-२०८०',
+                                //   subtitle: 'New Books Timothy Aryal-2080',
+                                //   color: AppColors.primary,
+                                //   onPressed: () {
+                                //     Navigator.push(
+                                //       context,
+                                //       PageTransition(
+                                //         type: PageTransitionType.rightToLeft,
+                                //         child: CategoryBooks(
+                                //           title:
+                                //               'नयाँ पुस्तकहरू तिमोथी अर्याल-२०८० '
+                                //               '(New Books Timothy Aryal-2080)',
+                                //           books: BookList.list6,
+                                //         ),
+                                //       ),
+                                //     );
+                                //   },
+                                // ),
                                 CategoryWidget(
                                   title: 'नेतृत्व र परामर्श कलेज',
                                   subtitle: 'Leadership and Counseling College',
