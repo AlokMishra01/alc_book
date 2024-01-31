@@ -113,7 +113,9 @@ class _AboutAppState extends State<AboutApp> {
                         ),
                       ),
                       TextSpan(
-                        text: 'Subash Thapa, Daniel Thapa, ',
+                        text:
+                            'Subash Thapa, Daniel Thapa Magar, Samuel Thapa Magar, Alok Mishra, Ps. Dambar G. Magar,'
+                            ' Lusan Man Mane , and all intercessors of Abundant Life Church.',
                         style: TextStyle(
                           color: AppColors.textTwo,
                           fontSize: 14.0,
@@ -128,48 +130,49 @@ class _AboutAppState extends State<AboutApp> {
                       //     fontWeight: FontWeight.w400,
                       //   ),
                       // ),
-                      TextSpan(
-                        text: 'Alok Mishra, Ps. Dambar G. Magar, Lusan Man Mane'
-                            ', and all intercessors of Abundant Life Church.',
-                        style: TextStyle(
-                          color: AppColors.textTwo,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      // TextSpan(
+                      //   text:
+                      //       ' Alok Mishra, Ps. Dambar G. Magar, Lusan Man Mane'
+                      //       ', and all intercessors of Abundant Life Church.',
+                      //   style: TextStyle(
+                      //     color: AppColors.textTwo,
+                      //     fontSize: 14.0,
+                      //     fontWeight: FontWeight.w600,
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
-                const SizedBox(width: double.infinity, height: 24.0),
-                RichText(
-                  textAlign: TextAlign.justify,
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Visit our Website: ',
-                        style: TextStyle(
-                          color: AppColors.textTwo,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'PJC NEPAL',
-                        style: TextStyle(
-                          color: AppColors.red,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w600,
-                          decoration: TextDecoration.underline,
-                        ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () => launchUrl(
-                                Uri.parse('https://pjcnepal.org/'),
-                                mode: LaunchMode.externalApplication,
-                              ),
-                      ),
-                    ],
-                  ),
-                ),
+                // const SizedBox(width: double.infinity, height: 24.0),
+                // RichText(
+                //   textAlign: TextAlign.justify,
+                //   text: TextSpan(
+                //     children: [
+                //       TextSpan(
+                //         text: 'Visit our Website: ',
+                //         style: TextStyle(
+                //           color: AppColors.textTwo,
+                //           fontSize: 14.0,
+                //           fontWeight: FontWeight.w400,
+                //         ),
+                //       ),
+                //       TextSpan(
+                //         text: 'PJC NEPAL',
+                //         style: TextStyle(
+                //           color: AppColors.red,
+                //           fontSize: 14.0,
+                //           fontWeight: FontWeight.w600,
+                //           decoration: TextDecoration.underline,
+                //         ),
+                //         recognizer: TapGestureRecognizer()
+                //           ..onTap = () => launchUrl(
+                //                 Uri.parse('https://pjcnepal.org/'),
+                //                 mode: LaunchMode.externalApplication,
+                //               ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 const SizedBox(width: double.infinity, height: 24.0),
                 RichText(
                   textAlign: TextAlign.justify,
@@ -228,7 +231,7 @@ class _AboutAppState extends State<AboutApp> {
                         recognizer: TapGestureRecognizer()
                           ..onTap = () => launchUrl(
                                 Uri.parse(
-                                    'https://www.youtube.com/@gharelusangati'),
+                                    'https://www.youtube.com/@timothyaryalministries'),
                                 mode: LaunchMode.externalApplication,
                               ),
                       ),

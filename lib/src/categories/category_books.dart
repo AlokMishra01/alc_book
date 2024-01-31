@@ -64,8 +64,9 @@ class _CategoryBooksState extends State<CategoryBooks> {
         backgroundColor: AppColors.red,
         titleSpacing: 0.0,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             CupertinoIcons.arrow_left,
+            color: AppColors.white,
           ),
           onPressed: () => Navigator.pop(context),
         ),
@@ -123,6 +124,7 @@ class _CategoryBooksState extends State<CategoryBooks> {
         padding: const EdgeInsets.only(top: 16.0, bottom: 120.0),
         itemBuilder: (_, i) => Container(
           width: double.infinity,
+          // height: 200,
           margin: const EdgeInsets.symmetric(horizontal: 16.0),
           padding: const EdgeInsets.all(16.0),
           decoration: BoxDecoration(
