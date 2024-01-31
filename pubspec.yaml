@@ -31,6 +31,8 @@ dependencies:
 #  syncfusion_flutter_pdfviewer: ^22.2.11
   flutter_native_splash: ^2.2.16
   recaptcha_enterprise_flutter: ^18.4.0 #to fix recaptcha warning in play console
+  new_version_plus: ^0.0.11
+  flutter_screenutil: ^5.9.0
 
 
 dev_dependencies:

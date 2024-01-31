@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoryWidget extends StatelessWidget {
@@ -22,7 +23,7 @@ class CategoryWidget extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),
         child: Container(
-          height: 85,
+          height: 75.h,
           decoration: BoxDecoration(
             color: color,
           ),

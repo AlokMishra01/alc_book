@@ -1,6 +1,8 @@
+import 'package:alc_book/src/app_update/app_update.dart';
 import 'package:alc_book/src/categories/widgets/search_bar_widget.dart';
 import 'package:alc_book/src/instructions/instructions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import '../about/about.dart';
@@ -11,8 +13,19 @@ import 'category_books.dart';
 import 'category_form_download.dart';
 import 'category_widget.dart';
 
-class CategoriesNew extends StatelessWidget {
+class CategoriesNew extends StatefulWidget {
   const CategoriesNew({super.key});
+
+  @override
+  State<CategoriesNew> createState() => _CategoriesNewState();
+}
+
+class _CategoriesNewState extends State<CategoriesNew> {
+  @override
+  void initState() {
+    AppUpdate.checkAppUpdate(context);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -180,7 +193,7 @@ class CategoriesNew extends StatelessWidget {
                                     );
                                   },
                                 ),
-                                const SizedBox(height: 100),
+                                // const SizedBox(height: 10),
                               ],
                             ),
                           ),
@@ -284,7 +297,7 @@ class CategoriesNew extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const SizedBox(height: 20),
+                        SizedBox(height: 18.h),
                       ],
                     ),
                   ),

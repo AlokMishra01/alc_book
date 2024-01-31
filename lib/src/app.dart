@@ -1,12 +1,9 @@
 import 'package:alc_book/src/categories/categories_new.dart';
-import 'package:alc_book/src/instructions/instructions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'categories/categories.dart';
-import 'constants/books.dart';
 import 'settings/settings_controller.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({
@@ -32,32 +29,39 @@ class MyApp extends StatelessWidget {
     return AnimatedBuilder(
       animation: settingsController,
       builder: (BuildContext context, Widget? child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          restorationScopeId: 'app',
-          // localizationsDelegates: const [
-          //   AppLocalizations.delegate,
-          //   GlobalMaterialLocalizations.delegate,
-          //   GlobalWidgetsLocalizations.delegate,
-          //   GlobalCupertinoLocalizations.delegate,
-          // ],
-          // supportedLocales: const [
-          //   Locale('en', ''), // English, no country code
-          // ],
-          // locale: const Locale('en', ''),
-          // onGenerateTitle: (BuildContext context) =>
-          //     AppLocalizations.of(context)!.appTitle,
-          theme: ThemeData(
-            textTheme: GoogleFonts.ralewayTextTheme(
-              Theme.of(context).textTheme,
-            ),
-          ),
-          // darkTheme: ThemeData.dark(),
-          // themeMode: settingsController.themeMode,
-          // themeMode: settingsController.themeMode,
+        return ScreenUtilInit(
+            designSize: const Size(360, 690),
+            minTextAdapt: true,
+            splitScreenMode: true,
+            builder: (context, _) {
+              return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                restorationScopeId: 'app',
+                // localizationsDelegates: const [
+                //   AppLocalizations.delegate,
+                //   GlobalMaterialLocalizations.delegate,
+                //   GlobalWidgetsLocalizations.delegate,
+                //   GlobalCupertinoLocalizations.delegate,
+                // ],
+                // supportedLocales: const [
+                //   Locale('en', ''), // English, no country code
+                // ],
+                // locale: const Locale('en', ''),
+                // onGenerateTitle: (BuildContext context) =>
+                //     AppLocalizations.of(context)!.appTitle,
+                theme: ThemeData(
+                  textTheme: GoogleFonts.ralewayTextTheme(
+                    Theme.of(context).textTheme,
+                  ),
+                  useMaterial3: true,
+                ),
+                // darkTheme: ThemeData.dark(),
+                // themeMode: settingsController.themeMode,
+                // themeMode: settingsController.themeMode,
 
-          home: const CategoriesNew(),
-        );
+                home: const CategoriesNew(),
+              );
+            });
       },
     );
   }
