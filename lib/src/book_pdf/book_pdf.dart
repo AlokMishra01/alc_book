@@ -155,121 +155,123 @@ class _BookPDFState extends State<BookPDF> {
           //   ),
         ],
       ),
-      body: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Expanded(
-              child: PDF(
-                  fitEachPage: false,
-                  pageSnap: false,
-                  pageFling: false,
-                  // gestureRecognizers: Set()
-                  //   ..add(
-                  //     Factory<VerticalDragGestureRecognizer>(() =>
-                  //         VerticalDragGestureRecognizer()
-                  //           ..onUpdate = _handleDragUpdate),
-                  //   ),
-                  onViewCreated: (PDFViewController pdfViewController) {
-                    _pdfViewController = pdfViewController;
-                  },
-                  onRender: (total) {
-                    setState(() {
-                      totalPages = total;
-                    });
-                  }).cachedFromUrl(
-                widget.book.book,
-                placeholder: (progress) => Center(
-                  child: CircularProgressIndicator(
-                    value: progress / 100,
+      body: SafeArea(
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Expanded(
+                child: PDF(
+                    fitEachPage: false,
+                    pageSnap: false,
+                    pageFling: false,
+                    // gestureRecognizers: Set()
+                    //   ..add(
+                    //     Factory<VerticalDragGestureRecognizer>(() =>
+                    //         VerticalDragGestureRecognizer()
+                    //           ..onUpdate = _handleDragUpdate),
+                    //   ),
+                    onViewCreated: (PDFViewController pdfViewController) {
+                      _pdfViewController = pdfViewController;
+                    },
+                    onRender: (total) {
+                      setState(() {
+                        totalPages = total;
+                      });
+                    }).cachedFromUrl(
+                  widget.book.book,
+                  placeholder: (progress) => Center(
+                    child: CircularProgressIndicator(
+                      value: progress / 100,
+                    ),
                   ),
-                ),
-                errorWidget: (error) => Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.error_rounded,
-                            color: AppColors.red,
-                            size: 64.0,
-                          ),
-                          Text(
-                            error.toString(),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
+                  errorWidget: (error) => Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.error_rounded,
                               color: AppColors.red,
-                              fontWeight: FontWeight.w600,
+                              size: 64.0,
                             ),
-                          ),
-                        ],
+                            Text(
+                              error.toString(),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColors.red,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ]),
-          // Padding(
-          //   padding: const EdgeInsets.all(8.0),
-          //   child: AnimatedContainer(
-          //     // height: 40,
-          //     height: showOptionsBar ? 50 : 0,
-          //     width: 100.w,
-          //     duration: Duration(milliseconds: 500),
-          //     constraints: BoxConstraints(maxHeight: 70, maxWidth: 150),
-          //     decoration: BoxDecoration(
-          //       color: AppColors.background.withOpacity(0.8),
-          //       borderRadius: BorderRadius.circular(8),
-          //     ),
-          //     child: Row(
-          //       mainAxisAlignment: MainAxisAlignment.center,
-          //       children: [
-          //         Padding(
-          //           padding: const EdgeInsets.all(5.0),
-          //           child: SizedBox(
-          //             width: width / 9,
-          //             height: 40,
-          //             child: TextFormField(
-          //               // initialValue: '0',
-          //               scrollPadding: EdgeInsets.zero,
-          //               keyboardType: TextInputType.number,
-          //               controller: _pageNumberController,
-          //               style: TextStyle(fontSize: 12, color: Colors.black),
-          //               onTapOutside: (pointerDownEvent) {
-          //                 FocusScopeNode currentFocus = FocusScope.of(context);
-          //                 if (!currentFocus.hasPrimaryFocus &&
-          //                     currentFocus.focusedChild != null) {
-          //                   currentFocus.focusedChild?.unfocus();
-          //                 }
-          //               },
-          //               onFieldSubmitted: (_) {
-          //                 int goToPage =
-          //                     int.parse(_pageNumberController.text) - 1;
-          //                 _pdfViewController.setPage(goToPage);
-          //               },
-          //               decoration: InputDecoration(
-          //                 enabledBorder: OutlineInputBorder(
-          //                   borderSide: BorderSide(color: AppColors.primary),
-          //                   borderRadius: BorderRadius.circular(8),
-          //                 ),
-          //                 focusedBorder: OutlineInputBorder(
-          //                   borderSide: BorderSide(color: AppColors.primary),
-          //                   borderRadius: BorderRadius.circular(8),
-          //                 ),
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //         Text('of ${totalPages == null ? '' : '$totalPages'}'),
-          //         SizedBox(width: 5)
-          //       ],
-          //     ),
-          //   ),
-          // ),
-        ],
+            ]),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: AnimatedContainer(
+            //     // height: 40,
+            //     height: showOptionsBar ? 50 : 0,
+            //     width: 100.w,
+            //     duration: Duration(milliseconds: 500),
+            //     constraints: BoxConstraints(maxHeight: 70, maxWidth: 150),
+            //     decoration: BoxDecoration(
+            //       color: AppColors.background.withOpacity(0.8),
+            //       borderRadius: BorderRadius.circular(8),
+            //     ),
+            //     child: Row(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //         Padding(
+            //           padding: const EdgeInsets.all(5.0),
+            //           child: SizedBox(
+            //             width: width / 9,
+            //             height: 40,
+            //             child: TextFormField(
+            //               // initialValue: '0',
+            //               scrollPadding: EdgeInsets.zero,
+            //               keyboardType: TextInputType.number,
+            //               controller: _pageNumberController,
+            //               style: TextStyle(fontSize: 12, color: Colors.black),
+            //               onTapOutside: (pointerDownEvent) {
+            //                 FocusScopeNode currentFocus = FocusScope.of(context);
+            //                 if (!currentFocus.hasPrimaryFocus &&
+            //                     currentFocus.focusedChild != null) {
+            //                   currentFocus.focusedChild?.unfocus();
+            //                 }
+            //               },
+            //               onFieldSubmitted: (_) {
+            //                 int goToPage =
+            //                     int.parse(_pageNumberController.text) - 1;
+            //                 _pdfViewController.setPage(goToPage);
+            //               },
+            //               decoration: InputDecoration(
+            //                 enabledBorder: OutlineInputBorder(
+            //                   borderSide: BorderSide(color: AppColors.primary),
+            //                   borderRadius: BorderRadius.circular(8),
+            //                 ),
+            //                 focusedBorder: OutlineInputBorder(
+            //                   borderSide: BorderSide(color: AppColors.primary),
+            //                   borderRadius: BorderRadius.circular(8),
+            //                 ),
+            //               ),
+            //             ),
+            //           ),
+            //         ),
+            //         Text('of ${totalPages == null ? '' : '$totalPages'}'),
+            //         SizedBox(width: 5)
+            //       ],
+            //     ),
+            //   ),
+            // ),
+          ],
+        ),
       ),
       // body: _isLoading
       //     ? const Center(child: CircularProgressIndicator())

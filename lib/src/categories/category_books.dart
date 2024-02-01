@@ -123,259 +123,261 @@ class _CategoryBooksState extends State<CategoryBooks> {
           //   ),
         ],
       ),
-      body: ListView.separated(
-        physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.only(top: 16.0, bottom: 70.0),
-        itemBuilder: (_, i) => Container(
-          width: double.infinity,
-          // height: 200,
-          margin: EdgeInsets.symmetric(horizontal: 16.0.w),
-          padding: EdgeInsets.all(16.0.r),
-          decoration: BoxDecoration(
-            color: AppColors.backgroundAlt,
-          ),
-          child: Row(
-            children: [
-              CachedNetworkImage(
-                placeholder: (_, __) => Container(
+      body: SafeArea(
+        child: ListView.separated(
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.only(top: 16, bottom: 16.0),
+          itemBuilder: (_, i) => Container(
+            width: double.infinity,
+            // height: 200,
+            margin: EdgeInsets.symmetric(horizontal: 16.0.w),
+            padding: EdgeInsets.all(16.0.r),
+            decoration: BoxDecoration(
+              color: AppColors.backgroundAlt,
+            ),
+            child: Row(
+              children: [
+                CachedNetworkImage(
+                  placeholder: (_, __) => Container(
+                    width: width / 2 * 0.7,
+                    height: isPortrait ? 200 : 150,
+                    // height: width / 2,
+                    color: AppColors.textTwo.withOpacity(0.5),
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        color: AppColors.red,
+                      ),
+                    ),
+                  ),
+                  imageUrl: widget.books[i].cover,
+                  // width: 70.w,
+                  fit: BoxFit.contain,
                   width: width / 2 * 0.7,
                   height: isPortrait ? 200 : 150,
                   // height: width / 2,
-                  color: AppColors.textTwo.withOpacity(0.5),
-                  child: Center(
-                    child: CircularProgressIndicator(
-                      color: AppColors.red,
-                    ),
-                  ),
                 ),
-                imageUrl: widget.books[i].cover,
-                // width: 70.w,
-                fit: BoxFit.contain,
-                width: width / 2 * 0.7,
-                height: isPortrait ? 200 : 150,
-                // height: width / 2,
-              ),
-              15.horizontalSpace,
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.books[i].name,
-                      style: GoogleFonts.khand(
-                        color: AppColors.textOne,
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.w700,
-                        height: 1.25,
-                      ),
-                    ),
-                    const SizedBox(height: 4.0),
-                    Text(
-                      widget.books[i].author,
-                      style: GoogleFonts.khand(
-                        color: AppColors.red,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w400,
-                        height: 1.25,
-                      ),
-                    ),
-                    MaterialButton(
-                      elevation: 0.0,
-                      color: AppColors.red,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24.0),
-                      ),
-                      child: Text(
-                        'पढ्नुहोस्',
+                15.horizontalSpace,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.books[i].name,
                         style: GoogleFonts.khand(
-                          color: AppColors.white,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16.0,
+                          color: AppColors.textOne,
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.w700,
+                          height: 1.25,
                         ),
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.rightToLeft,
-                            child: BookPDF(
-                              title: widget.title,
-                              book: widget.books[i],
-                            ),
+                      const SizedBox(height: 4.0),
+                      Text(
+                        widget.books[i].author,
+                        style: GoogleFonts.khand(
+                          color: AppColors.red,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w400,
+                          height: 1.25,
+                        ),
+                      ),
+                      MaterialButton(
+                        elevation: 0.0,
+                        color: AppColors.red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24.0),
+                        ),
+                        child: Text(
+                          'पढ्नुहोस्',
+                          style: GoogleFonts.khand(
+                            color: AppColors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16.0,
                           ),
-                        );
-                      },
-                    ),
-                    // if (status && load)
-                    //   MaterialButton(
-                    //     elevation: 0.0,
-                    //     color: AppColors.red,
-                    //     shape: RoundedRectangleBorder(
-                    //       borderRadius: BorderRadius.circular(24.0),
-                    //     ),
-                    //     child: Text(
-                    //       'पढ्नुहोस्',
-                    //       style: GoogleFonts.khand(
-                    //         color: AppColors.white,
-                    //         fontWeight: FontWeight.w400,
-                    //         fontSize: 16.0,
-                    //       ),
-                    //     ),
-                    //     onPressed: () {
-                    //       Navigator.push(
-                    //         context,
-                    //         PageTransition(
-                    //           type: PageTransitionType.rightToLeft,
-                    //           child: BookPDF(
-                    //             title: widget.title,
-                    //             book: widget.books[i],
-                    //           ),
-                    //         ),
-                    //       );
-                    //     },
-                    //   ),
-                    // if (!status && _loaded)
-                    //   MaterialButton(
-                    //     elevation: 0.0,
-                    //     color: AppColors.red,
-                    //     shape: RoundedRectangleBorder(
-                    //       borderRadius: BorderRadius.circular(24.0),
-                    //     ),
-                    //     child: Text(
-                    //       'पढ्नुहोस्',
-                    //       style: GoogleFonts.khand(
-                    //         color: AppColors.white,
-                    //         fontWeight: FontWeight.w400,
-                    //         fontSize: 16.0,
-                    //       ),
-                    //     ),
-                    //     onPressed: () {
-                    //       Navigator.push(
-                    //         context,
-                    //         PageTransition(
-                    //           type: PageTransitionType.rightToLeft,
-                    //           child: BookPDF(
-                    //             title: widget.title,
-                    //             book: widget.books[i],
-                    //           ),
-                    //         ),
-                    //       );
-                    //     },
-                    //   ),
-                    // // if (!status && _loaded)
-                    // //   FutureBuilder<DocumentSnapshot>(
-                    // //     future: FirebaseFirestore.instance
-                    // //         .collection('users')
-                    // //         .doc(_user)
-                    // //         .get(),
-                    // //     builder: (
-                    // //       BuildContext context,
-                    // //       AsyncSnapshot<DocumentSnapshot> snapshot,
-                    // //     ) {
-                    // //       if (snapshot.hasError) {
-                    // //         return MaterialButton(
-                    // //           elevation: 0.0,
-                    // //           color: AppColors.red,
-                    // //           shape: RoundedRectangleBorder(
-                    // //             borderRadius: BorderRadius.circular(24.0),
-                    // //           ),
-                    // //           child: Text(
-                    // //             'Pending',
-                    // //             style: GoogleFonts.khand(
-                    // //               color: AppColors.white,
-                    // //               fontWeight: FontWeight.w400,
-                    // //               fontSize: 16.0,
-                    // //             ),
-                    // //           ),
-                    // //           onPressed: () {},
-                    // //         );
-                    // //       }
-                    // //
-                    // //       if (snapshot.hasData && !snapshot.data!.exists) {
-                    // //         return MaterialButton(
-                    // //           elevation: 0.0,
-                    // //           color: AppColors.red,
-                    // //           shape: RoundedRectangleBorder(
-                    // //             borderRadius: BorderRadius.circular(24.0),
-                    // //           ),
-                    // //           child: Text(
-                    // //             'Pending',
-                    // //             style: GoogleFonts.khand(
-                    // //               color: AppColors.white,
-                    // //               fontWeight: FontWeight.w400,
-                    // //               fontSize: 16.0,
-                    // //             ),
-                    // //           ),
-                    // //           onPressed: () {},
-                    // //         );
-                    // //       }
-                    // //
-                    // //       if (snapshot.connectionState ==
-                    // //           ConnectionState.done) {
-                    // //         if ((snapshot.data?.get('status') ?? false)
-                    // //             as bool) {
-                    // //           return MaterialButton(
-                    // //             elevation: 0.0,
-                    // //             color: AppColors.red,
-                    // //             shape: RoundedRectangleBorder(
-                    // //               borderRadius: BorderRadius.circular(24.0),
-                    // //             ),
-                    // //             child: Text(
-                    // //               'पढ्नुहोस्',
-                    // //               style: GoogleFonts.khand(
-                    // //                 color: AppColors.white,
-                    // //                 fontWeight: FontWeight.w400,
-                    // //                 fontSize: 16.0,
-                    // //               ),
-                    // //             ),
-                    // //             onPressed: () {
-                    // //               Navigator.push(
-                    // //                 context,
-                    // //                 PageTransition(
-                    // //                   type: PageTransitionType.rightToLeft,
-                    // //                   child: BookPDF(
-                    // //                     title: widget.title,
-                    // //                     book: widget.books[i],
-                    // //                   ),
-                    // //                 ),
-                    // //               );
-                    // //             },
-                    // //           );
-                    // //         } else {
-                    // //           return MaterialButton(
-                    // //             elevation: 0.0,
-                    // //             color: AppColors.red,
-                    // //             shape: RoundedRectangleBorder(
-                    // //               borderRadius: BorderRadius.circular(24.0),
-                    // //             ),
-                    // //             child: Text(
-                    // //               'Pending',
-                    // //               style: GoogleFonts.khand(
-                    // //                 color: AppColors.white,
-                    // //                 fontWeight: FontWeight.w400,
-                    // //                 fontSize: 16.0,
-                    // //               ),
-                    // //             ),
-                    // //             onPressed: () {},
-                    // //           );
-                    // //         }
-                    // //       }
-                    // //
-                    // //       return const SizedBox(
-                    // //         height: 24.0,
-                    // //         width: 24.0,
-                    // //         child: CircularProgressIndicator(),
-                    // //       );
-                    // //     },
-                    // //   ),
-                  ],
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: BookPDF(
+                                title: widget.title,
+                                book: widget.books[i],
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                      // if (status && load)
+                      //   MaterialButton(
+                      //     elevation: 0.0,
+                      //     color: AppColors.red,
+                      //     shape: RoundedRectangleBorder(
+                      //       borderRadius: BorderRadius.circular(24.0),
+                      //     ),
+                      //     child: Text(
+                      //       'पढ्नुहोस्',
+                      //       style: GoogleFonts.khand(
+                      //         color: AppColors.white,
+                      //         fontWeight: FontWeight.w400,
+                      //         fontSize: 16.0,
+                      //       ),
+                      //     ),
+                      //     onPressed: () {
+                      //       Navigator.push(
+                      //         context,
+                      //         PageTransition(
+                      //           type: PageTransitionType.rightToLeft,
+                      //           child: BookPDF(
+                      //             title: widget.title,
+                      //             book: widget.books[i],
+                      //           ),
+                      //         ),
+                      //       );
+                      //     },
+                      //   ),
+                      // if (!status && _loaded)
+                      //   MaterialButton(
+                      //     elevation: 0.0,
+                      //     color: AppColors.red,
+                      //     shape: RoundedRectangleBorder(
+                      //       borderRadius: BorderRadius.circular(24.0),
+                      //     ),
+                      //     child: Text(
+                      //       'पढ्नुहोस्',
+                      //       style: GoogleFonts.khand(
+                      //         color: AppColors.white,
+                      //         fontWeight: FontWeight.w400,
+                      //         fontSize: 16.0,
+                      //       ),
+                      //     ),
+                      //     onPressed: () {
+                      //       Navigator.push(
+                      //         context,
+                      //         PageTransition(
+                      //           type: PageTransitionType.rightToLeft,
+                      //           child: BookPDF(
+                      //             title: widget.title,
+                      //             book: widget.books[i],
+                      //           ),
+                      //         ),
+                      //       );
+                      //     },
+                      //   ),
+                      // // if (!status && _loaded)
+                      // //   FutureBuilder<DocumentSnapshot>(
+                      // //     future: FirebaseFirestore.instance
+                      // //         .collection('users')
+                      // //         .doc(_user)
+                      // //         .get(),
+                      // //     builder: (
+                      // //       BuildContext context,
+                      // //       AsyncSnapshot<DocumentSnapshot> snapshot,
+                      // //     ) {
+                      // //       if (snapshot.hasError) {
+                      // //         return MaterialButton(
+                      // //           elevation: 0.0,
+                      // //           color: AppColors.red,
+                      // //           shape: RoundedRectangleBorder(
+                      // //             borderRadius: BorderRadius.circular(24.0),
+                      // //           ),
+                      // //           child: Text(
+                      // //             'Pending',
+                      // //             style: GoogleFonts.khand(
+                      // //               color: AppColors.white,
+                      // //               fontWeight: FontWeight.w400,
+                      // //               fontSize: 16.0,
+                      // //             ),
+                      // //           ),
+                      // //           onPressed: () {},
+                      // //         );
+                      // //       }
+                      // //
+                      // //       if (snapshot.hasData && !snapshot.data!.exists) {
+                      // //         return MaterialButton(
+                      // //           elevation: 0.0,
+                      // //           color: AppColors.red,
+                      // //           shape: RoundedRectangleBorder(
+                      // //             borderRadius: BorderRadius.circular(24.0),
+                      // //           ),
+                      // //           child: Text(
+                      // //             'Pending',
+                      // //             style: GoogleFonts.khand(
+                      // //               color: AppColors.white,
+                      // //               fontWeight: FontWeight.w400,
+                      // //               fontSize: 16.0,
+                      // //             ),
+                      // //           ),
+                      // //           onPressed: () {},
+                      // //         );
+                      // //       }
+                      // //
+                      // //       if (snapshot.connectionState ==
+                      // //           ConnectionState.done) {
+                      // //         if ((snapshot.data?.get('status') ?? false)
+                      // //             as bool) {
+                      // //           return MaterialButton(
+                      // //             elevation: 0.0,
+                      // //             color: AppColors.red,
+                      // //             shape: RoundedRectangleBorder(
+                      // //               borderRadius: BorderRadius.circular(24.0),
+                      // //             ),
+                      // //             child: Text(
+                      // //               'पढ्नुहोस्',
+                      // //               style: GoogleFonts.khand(
+                      // //                 color: AppColors.white,
+                      // //                 fontWeight: FontWeight.w400,
+                      // //                 fontSize: 16.0,
+                      // //               ),
+                      // //             ),
+                      // //             onPressed: () {
+                      // //               Navigator.push(
+                      // //                 context,
+                      // //                 PageTransition(
+                      // //                   type: PageTransitionType.rightToLeft,
+                      // //                   child: BookPDF(
+                      // //                     title: widget.title,
+                      // //                     book: widget.books[i],
+                      // //                   ),
+                      // //                 ),
+                      // //               );
+                      // //             },
+                      // //           );
+                      // //         } else {
+                      // //           return MaterialButton(
+                      // //             elevation: 0.0,
+                      // //             color: AppColors.red,
+                      // //             shape: RoundedRectangleBorder(
+                      // //               borderRadius: BorderRadius.circular(24.0),
+                      // //             ),
+                      // //             child: Text(
+                      // //               'Pending',
+                      // //               style: GoogleFonts.khand(
+                      // //                 color: AppColors.white,
+                      // //                 fontWeight: FontWeight.w400,
+                      // //                 fontSize: 16.0,
+                      // //               ),
+                      // //             ),
+                      // //             onPressed: () {},
+                      // //           );
+                      // //         }
+                      // //       }
+                      // //
+                      // //       return const SizedBox(
+                      // //         height: 24.0,
+                      // //         width: 24.0,
+                      // //         child: CircularProgressIndicator(),
+                      // //       );
+                      // //     },
+                      // //   ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
+          separatorBuilder: (_, i) => SizedBox(height: 24.h),
+          itemCount: widget.books.length,
         ),
-        separatorBuilder: (_, i) => SizedBox(height: 24.h),
-        itemCount: widget.books.length,
       ),
     );
   }
