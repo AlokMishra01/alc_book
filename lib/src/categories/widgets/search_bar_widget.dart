@@ -1,6 +1,7 @@
 import 'package:alc_book/src/categories/widgets/search_bar_preview.dart';
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
 import 'package:alc_book/src/constants/books.dart';
 
@@ -47,12 +48,12 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
       transitionDuration: const Duration(milliseconds: 300),
       transitionCurve: Curves.easeInOut,
       height: 55,
-      borderRadius: BorderRadius.circular(12),
-      margins: const EdgeInsets.only(top: 50, left: 30, right: 30),
+      borderRadius: BorderRadius.circular(12.r),
+      margins: EdgeInsets.only(top: 42.h, left: 30.w, right: 30.w),
       physics: const BouncingScrollPhysics(),
       axisAlignment: isPortrait ? 0.0 : 0.0,
       openAxisAlignment: 0.0,
-      width: isPortrait ? 600 : 700,
+      width: isPortrait ? 600.w : 700.w,
       debounceDelay: const Duration(milliseconds: 500),
       transition: CircularFloatingSearchBarTransition(),
       automaticallyImplyDrawerHamburger: false,
@@ -75,7 +76,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
       },
       builder: (BuildContext context, Animation<double> transition) {
         return ClipRRect(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           child: AnimatedContainer(
             height: getSearchbarheight() > screenHeight * 0.75
                 ? screenHeight * 0.75

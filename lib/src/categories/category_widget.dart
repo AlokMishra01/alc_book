@@ -19,21 +19,29 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 15),
+      padding: EdgeInsets.only(bottom: 12.h),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(15.r),
         child: Container(
-          height: 75.h,
+          height: 72.h,
+          padding: EdgeInsets.zero,
           decoration: BoxDecoration(
             color: color,
           ),
           child: TextButton(
+            style: TextButton.styleFrom(
+              padding: EdgeInsets.zero,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.zero),
+              ),
+            ),
             onPressed: onPressed,
             child: Padding(
-              padding: const EdgeInsets.only(
-                  top: 12.0, bottom: 12.0, left: 12, right: 12),
+              padding: EdgeInsets.only(
+                  top: 12.h, bottom: 12.0.h, left: 12.w, right: 12.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     title,
@@ -43,11 +51,9 @@ class CategoryWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
-                  Expanded(
-                    child: Text(subtitle,
-                        style: GoogleFonts.raleway(
-                            fontSize: 12, color: Colors.white)),
-                  ),
+                  Text(subtitle,
+                      style: GoogleFonts.raleway(
+                          fontSize: 12, color: Colors.white)),
                 ],
               ),
             ),
