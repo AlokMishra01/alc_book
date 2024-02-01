@@ -205,7 +205,7 @@ class BookList {
     BookModel(
         name: 'हामीले जानी राख्नुपर्ने तथ्यहरू ! नेपाली-पर्चा',
         author: '- डा. तिमोथी अर्याल',
-        cover: Images.book22,
+        cover: Images.book27,
         book:
             'https://firebasestorage.googleapis.com/v0/b/timothy-books.appspot.com/o/books%2FEffective%20Evangelism%20Materials%20(Royalty%20Free)%2FThings%20we%20Should%20Know%20!%20(Nepali).pdf?alt=media&token=0b7d7a7d-1894-4f0a-9fd8-825eb59147c1',
         searchWord:

@@ -29,6 +29,8 @@ class _CategoriesNewState extends State<CategoriesNew> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       backgroundColor: AppColors.primary,
       resizeToAvoidBottomInset: false,
@@ -38,17 +40,23 @@ class _CategoriesNewState extends State<CategoriesNew> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 135),
+              100.verticalSpace,
               Expanded(
                 child: Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(35),
-                        topRight: Radius.circular(35)),
+                      topLeft: Radius.circular(35.r),
+                      topRight: Radius.circular(35.r),
+                    ),
                     color: Colors.white,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(30),
+                    padding: EdgeInsets.only(
+                      top: 10.h,
+                      left: 25.w,
+                      right: 25.w,
+                      bottom: 30.h,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -199,7 +207,7 @@ class _CategoriesNewState extends State<CategoriesNew> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 15),
+                          padding: EdgeInsets.symmetric(vertical: 12.h),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -207,7 +215,7 @@ class _CategoriesNewState extends State<CategoriesNew> {
                                 elevation: 0.0,
                                 color: AppColors.red,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(24.0),
+                                  borderRadius: BorderRadius.circular(24.r),
                                 ),
                                 materialTapTargetSize:
                                     MaterialTapTargetSize.shrinkWrap,
@@ -297,7 +305,7 @@ class _CategoriesNewState extends State<CategoriesNew> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 18.h),
+                        // SizedBox(height: 18.h),
                       ],
                     ),
                   ),
