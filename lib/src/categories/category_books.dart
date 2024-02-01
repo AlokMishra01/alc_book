@@ -5,6 +5,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -58,14 +59,18 @@ class _CategoryBooksState extends State<CategoryBooks> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
+    print('width : $width');
+    final bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.red,
         titleSpacing: 0.0,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             CupertinoIcons.arrow_left,
+            color: AppColors.white,
           ),
           onPressed: () => Navigator.pop(context),
         ),
@@ -120,11 +125,12 @@ class _CategoryBooksState extends State<CategoryBooks> {
       ),
       body: ListView.separated(
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.only(top: 16.0, bottom: 120.0),
+        padding: const EdgeInsets.only(top: 16.0, bottom: 70.0),
         itemBuilder: (_, i) => Container(
           width: double.infinity,
-          margin: const EdgeInsets.symmetric(horizontal: 16.0),
-          padding: const EdgeInsets.all(16.0),
+          // height: 200,
+          margin: EdgeInsets.symmetric(horizontal: 16.0.w),
+          padding: EdgeInsets.all(16.0.r),
           decoration: BoxDecoration(
             color: AppColors.backgroundAlt,
           ),
@@ -132,8 +138,9 @@ class _CategoryBooksState extends State<CategoryBooks> {
             children: [
               CachedNetworkImage(
                 placeholder: (_, __) => Container(
-                  width: (width / 2) * 0.7,
-                  height: width / 2,
+                  width: width / 2 * 0.7,
+                  height: isPortrait ? 200 : 150,
+                  // height: width / 2,
                   color: AppColors.textTwo.withOpacity(0.5),
                   child: Center(
                     child: CircularProgressIndicator(
@@ -142,9 +149,13 @@ class _CategoryBooksState extends State<CategoryBooks> {
                   ),
                 ),
                 imageUrl: widget.books[i].cover,
-                height: width / 2,
+                // width: 70.w,
+                fit: BoxFit.contain,
+                width: width / 2 * 0.7,
+                height: isPortrait ? 200 : 150,
+                // height: width / 2,
               ),
-              const SizedBox(width: 16.0),
+              15.horizontalSpace,
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -363,7 +374,7 @@ class _CategoryBooksState extends State<CategoryBooks> {
             ],
           ),
         ),
-        separatorBuilder: (_, i) => const SizedBox(height: 24.0),
+        separatorBuilder: (_, i) => SizedBox(height: 24.h),
         itemCount: widget.books.length,
       ),
     );

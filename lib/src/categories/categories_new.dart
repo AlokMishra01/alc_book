@@ -1,6 +1,8 @@
+import 'package:alc_book/src/app_update/app_update.dart';
 import 'package:alc_book/src/categories/widgets/search_bar_widget.dart';
 import 'package:alc_book/src/instructions/instructions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import '../about/about.dart';
@@ -11,11 +13,24 @@ import 'category_books.dart';
 import 'category_form_download.dart';
 import 'category_widget.dart';
 
-class CategoriesNew extends StatelessWidget {
+class CategoriesNew extends StatefulWidget {
   const CategoriesNew({super.key});
 
   @override
+  State<CategoriesNew> createState() => _CategoriesNewState();
+}
+
+class _CategoriesNewState extends State<CategoriesNew> {
+  @override
+  void initState() {
+    AppUpdate.checkAppUpdate(context);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       backgroundColor: AppColors.primary,
       resizeToAvoidBottomInset: false,
@@ -25,17 +40,23 @@ class CategoriesNew extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 135),
+              100.verticalSpace,
               Expanded(
                 child: Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(35),
-                        topRight: Radius.circular(35)),
+                      topLeft: Radius.circular(35.r),
+                      topRight: Radius.circular(35.r),
+                    ),
                     color: Colors.white,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(30),
+                    padding: EdgeInsets.only(
+                      top: 10.h,
+                      left: 25.w,
+                      right: 25.w,
+                      bottom: 30.h,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -143,25 +164,25 @@ class CategoriesNew extends StatelessWidget {
                                     );
                                   },
                                 ),
-                                CategoryWidget(
-                                  title: 'नयाँ पुस्तकहरू तिमोथी अर्याल-२०८०',
-                                  subtitle: 'New Books Timothy Aryal-2080',
-                                  color: AppColors.primary,
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      PageTransition(
-                                        type: PageTransitionType.rightToLeft,
-                                        child: CategoryBooks(
-                                          title:
-                                              'नयाँ पुस्तकहरू तिमोथी अर्याल-२०८० '
-                                              '(New Books Timothy Aryal-2080)',
-                                          books: BookList.list6,
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                ),
+                                // CategoryWidget(
+                                //   title: 'नयाँ पुस्तकहरू तिमोथी अर्याल-२०८०',
+                                //   subtitle: 'New Books Timothy Aryal-2080',
+                                //   color: AppColors.primary,
+                                //   onPressed: () {
+                                //     Navigator.push(
+                                //       context,
+                                //       PageTransition(
+                                //         type: PageTransitionType.rightToLeft,
+                                //         child: CategoryBooks(
+                                //           title:
+                                //               'नयाँ पुस्तकहरू तिमोथी अर्याल-२०८० '
+                                //               '(New Books Timothy Aryal-2080)',
+                                //           books: BookList.list6,
+                                //         ),
+                                //       ),
+                                //     );
+                                //   },
+                                // ),
                                 CategoryWidget(
                                   title: 'नेतृत्व र परामर्श कलेज',
                                   subtitle: 'Leadership and Counseling College',
@@ -180,13 +201,13 @@ class CategoriesNew extends StatelessWidget {
                                     );
                                   },
                                 ),
-                                const SizedBox(height: 100),
+                                // const SizedBox(height: 10),
                               ],
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 15),
+                          padding: EdgeInsets.symmetric(vertical: 12.h),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -194,7 +215,7 @@ class CategoriesNew extends StatelessWidget {
                                 elevation: 0.0,
                                 color: AppColors.red,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(24.0),
+                                  borderRadius: BorderRadius.circular(24.r),
                                 ),
                                 materialTapTargetSize:
                                     MaterialTapTargetSize.shrinkWrap,
@@ -284,7 +305,7 @@ class CategoriesNew extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const SizedBox(height: 20),
+                        // SizedBox(height: 18.h),
                       ],
                     ),
                   ),
