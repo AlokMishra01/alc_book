@@ -12,6 +12,7 @@ import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:wakelock/wakelock.dart';
 // import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class BookPDF extends StatefulWidget {
@@ -41,6 +42,7 @@ class _BookPDFState extends State<BookPDF> {
   @override
   void initState() {
     super.initState();
+    Wakelock.enable();
     _checkStatus();
   }
 
@@ -75,6 +77,7 @@ class _BookPDFState extends State<BookPDF> {
   void dispose() {
     _pageNumberController.dispose();
     _scrollController.dispose();
+    Wakelock.disable();
     super.dispose();
   }
 
