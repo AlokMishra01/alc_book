@@ -1,19 +1,16 @@
 import 'dart:io';
-
 import 'package:alc_book/src/constants/colors.dart';
 import 'package:alc_book/src/models/book_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:wakelock/wakelock.dart';
-// import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 class BookPDF extends StatefulWidget {
   final String title;
@@ -42,8 +39,8 @@ class _BookPDFState extends State<BookPDF> {
   @override
   void initState() {
     super.initState();
-    Wakelock.enable();
-    _checkStatus();
+    WakelockPlus.enable(); //To keep screen awake
+    // _checkStatus();
   }
 
   _checkStatus() async {
@@ -77,7 +74,7 @@ class _BookPDFState extends State<BookPDF> {
   void dispose() {
     _pageNumberController.dispose();
     _scrollController.dispose();
-    Wakelock.disable();
+    WakelockPlus.disable(); //To disable screen awake
     super.dispose();
   }
 
@@ -165,6 +162,7 @@ class _BookPDFState extends State<BookPDF> {
                     fitEachPage: false,
                     pageSnap: false,
                     pageFling: false,
+                    // nightMode: true,
                     // gestureRecognizers: Set()
                     //   ..add(
                     //     Factory<VerticalDragGestureRecognizer>(() =>
@@ -213,63 +211,64 @@ class _BookPDFState extends State<BookPDF> {
                 ),
               ),
             ]),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: AnimatedContainer(
-            //     // height: 40,
-            //     height: showOptionsBar ? 50 : 0,
-            //     width: 100.w,
-            //     duration: Duration(milliseconds: 500),
-            //     constraints: BoxConstraints(maxHeight: 70, maxWidth: 150),
-            //     decoration: BoxDecoration(
-            //       color: AppColors.background.withOpacity(0.8),
-            //       borderRadius: BorderRadius.circular(8),
-            //     ),
-            //     child: Row(
-            //       mainAxisAlignment: MainAxisAlignment.center,
-            //       children: [
-            //         Padding(
-            //           padding: const EdgeInsets.all(5.0),
-            //           child: SizedBox(
-            //             width: width / 9,
-            //             height: 40,
-            //             child: TextFormField(
-            //               // initialValue: '0',
-            //               scrollPadding: EdgeInsets.zero,
-            //               keyboardType: TextInputType.number,
-            //               controller: _pageNumberController,
-            //               style: TextStyle(fontSize: 12, color: Colors.black),
-            //               onTapOutside: (pointerDownEvent) {
-            //                 FocusScopeNode currentFocus = FocusScope.of(context);
-            //                 if (!currentFocus.hasPrimaryFocus &&
-            //                     currentFocus.focusedChild != null) {
-            //                   currentFocus.focusedChild?.unfocus();
-            //                 }
-            //               },
-            //               onFieldSubmitted: (_) {
-            //                 int goToPage =
-            //                     int.parse(_pageNumberController.text) - 1;
-            //                 _pdfViewController.setPage(goToPage);
-            //               },
-            //               decoration: InputDecoration(
-            //                 enabledBorder: OutlineInputBorder(
-            //                   borderSide: BorderSide(color: AppColors.primary),
-            //                   borderRadius: BorderRadius.circular(8),
-            //                 ),
-            //                 focusedBorder: OutlineInputBorder(
-            //                   borderSide: BorderSide(color: AppColors.primary),
-            //                   borderRadius: BorderRadius.circular(8),
-            //                 ),
-            //               ),
-            //             ),
-            //           ),
-            //         ),
-            //         Text('of ${totalPages == null ? '' : '$totalPages'}'),
-            //         SizedBox(width: 5)
-            //       ],
-            //     ),
-            //   ),
-            // ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: AnimatedContainer(
+                // height: 40,
+                height: showOptionsBar ? 50 : 0,
+                width: 100.w,
+                duration: const Duration(milliseconds: 500),
+                constraints: const BoxConstraints(maxHeight: 70, maxWidth: 150),
+                decoration: BoxDecoration(
+                  color: AppColors.background.withOpacity(0.8),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: SizedBox(
+                        width: width / 9,
+                        height: 40,
+                        child: TextFormField(
+                          // initialValue: '0',
+                          scrollPadding: EdgeInsets.zero,
+                          keyboardType: TextInputType.number,
+                          controller: _pageNumberController,
+                          style: TextStyle(fontSize: 12, color: Colors.black),
+                          onTapOutside: (pointerDownEvent) {
+                            FocusScopeNode currentFocus =
+                                FocusScope.of(context);
+                            if (!currentFocus.hasPrimaryFocus &&
+                                currentFocus.focusedChild != null) {
+                              currentFocus.focusedChild?.unfocus();
+                            }
+                          },
+                          onFieldSubmitted: (_) {
+                            int goToPage =
+                                int.parse(_pageNumberController.text) - 1;
+                            _pdfViewController.setPage(goToPage);
+                          },
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: AppColors.primary),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: AppColors.primary),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Text('of ${totalPages == null ? '' : '$totalPages'}'),
+                    SizedBox(width: 5)
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),

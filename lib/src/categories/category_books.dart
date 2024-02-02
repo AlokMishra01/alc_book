@@ -59,7 +59,7 @@ class _CategoryBooksState extends State<CategoryBooks> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    print('width : $width');
+
     final bool isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
