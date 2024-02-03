@@ -22,7 +22,11 @@ class MyApp extends StatelessWidget {
     //   DeviceOrientation.portraitDown,
     // ]);
     SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(systemNavigationBarColor: Colors.transparent),
+      const SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.transparent,
+        // statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
     );
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
