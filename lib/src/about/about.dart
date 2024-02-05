@@ -42,8 +42,9 @@ class _AboutState extends State<About> {
         backgroundColor: AppColors.red,
         titleSpacing: 0.0,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             CupertinoIcons.arrow_left,
+            color: AppColors.white,
           ),
           onPressed: () => Navigator.pop(context),
         ),
@@ -64,8 +65,9 @@ class _AboutState extends State<About> {
                   mode: LaunchMode.externalApplication,
                 );
               },
-              icon: const Icon(
+              icon: Icon(
                 CupertinoIcons.arrow_down_square_fill,
+                color: AppColors.white,
               ),
             ),
           // if (!status || !Platform.isIOS)
