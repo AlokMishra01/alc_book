@@ -201,7 +201,7 @@ class _CategoriesNewState extends State<CategoriesNew> {
                                     );
                                   },
                                 ),
-                                // const SizedBox(height: 10),
+                                30.verticalSpace,
                               ],
                             ),
                           ),

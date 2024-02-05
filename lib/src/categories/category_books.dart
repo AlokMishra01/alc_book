@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shimmer/shimmer.dart';
 
 class CategoryBooks extends StatefulWidget {
   final String title;
@@ -138,20 +139,32 @@ class _CategoryBooksState extends State<CategoryBooks> {
             child: Row(
               children: [
                 CachedNetworkImage(
-                  placeholder: (_, __) => Container(
-                    width: width / 2 * 0.7,
-                    height: isPortrait ? 200 : 150,
-                    // height: width / 2,
-                    color: AppColors.textTwo.withOpacity(0.5),
-                    child: Center(
-                      child: CircularProgressIndicator(
-                        color: AppColors.red,
+                  placeholder: (_, __) => Shimmer.fromColors(
+                    baseColor: Colors.grey.shade300,
+                    highlightColor: Colors.grey.shade100,
+                    child: Container(
+                      width: width / 2 * 0.7,
+                      height: isPortrait ? 200 : 150,
+                      decoration: BoxDecoration(
+                        color: AppColors.textTwo.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                     ),
                   ),
+                  imageBuilder: (context, image) => ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Image(
+                          image: image,
+                          fit: BoxFit.contain,
+                        )),
+                  ),
                   imageUrl: widget.books[i].cover,
                   // width: 70.w,
-                  fit: BoxFit.contain,
+                  // fit: BoxFit.fitWidth,
                   width: width / 2 * 0.7,
                   height: isPortrait ? 200 : 150,
                   // height: width / 2,
