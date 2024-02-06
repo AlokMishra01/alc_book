@@ -13,4 +13,6 @@ class AppColors {
   static Color textThree = const Color(0xFFCDCDCD);
   static Color grey = const Color(0xFF9D9378);
   static Color skyBlue = const Color(0xFF01999C);
+  static Color shimmerBase = Colors.grey.shade300;
+  static Color shimmerHighlight = Colors.grey.shade100;
 }

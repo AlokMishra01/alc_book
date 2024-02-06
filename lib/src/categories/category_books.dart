@@ -142,8 +142,8 @@ class _CategoryBooksState extends State<CategoryBooks> {
                   borderRadius: BorderRadius.circular(12),
                   child: CachedNetworkImage(
                     placeholder: (_, __) => Shimmer.fromColors(
-                      baseColor: Colors.grey.shade300,
-                      highlightColor: Colors.grey.shade100,
+                      baseColor: AppColors.shimmerBase,
+                      highlightColor: AppColors.shimmerHighlight,
                       child: Container(
                         // width: width / 2 * 0.7,
                         // height: isPortrait ? 200 : 150,
