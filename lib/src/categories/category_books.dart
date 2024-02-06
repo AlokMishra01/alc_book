@@ -145,7 +145,7 @@ class _CategoryBooksState extends State<CategoryBooks> {
                       baseColor: AppColors.shimmerBase,
                       highlightColor: AppColors.shimmerHighlight,
                       child: Container(
-                        // width: width / 2 * 0.7,
+                        // width: width / 2 * 0.7
                         // height: isPortrait ? 200 : 150,
                         decoration: BoxDecoration(
                           color: AppColors.textTwo.withOpacity(0.5),
