@@ -6,6 +6,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class About extends StatefulWidget {
@@ -42,8 +43,9 @@ class _AboutState extends State<About> {
         backgroundColor: AppColors.red,
         titleSpacing: 0.0,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             CupertinoIcons.arrow_left,
+            color: AppColors.white,
           ),
           onPressed: () => Navigator.pop(context),
         ),
@@ -64,8 +66,9 @@ class _AboutState extends State<About> {
                   mode: LaunchMode.externalApplication,
                 );
               },
-              icon: const Icon(
+              icon: Icon(
                 CupertinoIcons.arrow_down_square_fill,
+                color: AppColors.white,
               ),
             ),
           // if (!status || !Platform.isIOS)
@@ -148,17 +151,20 @@ class _AboutState extends State<About> {
                   child: InteractiveViewer(
                     maxScale: 4,
                     child: CachedNetworkImage(
-                      placeholder: (_, __) => Container(
-                        width: size.width - 48,
-                        height: size.height - 240,
-                        color: AppColors.textTwo.withOpacity(0.5),
-                        child: Center(
-                          child: CircularProgressIndicator(
-                            color: AppColors.red,
+                      placeholder: (_, __) => Shimmer.fromColors(
+                        baseColor: AppColors.shimmerBase,
+                        highlightColor: AppColors.shimmerHighlight,
+                        child: Container(
+                          width: size.width - 48,
+                          height: size.height - 240,
+                          decoration: BoxDecoration(
+                            color: AppColors.textTwo.withOpacity(0.5),
+                            borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                       ),
                       imageUrl: Images.about,
+                      fit: BoxFit.contain,
                     ),
                   )),
               // Expanded(

@@ -4,7 +4,7 @@ description: ALC Book flutter app
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
 
-version: 1.0.12+92
+version: 1.0.16+96
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
@@ -33,6 +33,8 @@ dependencies:
   recaptcha_enterprise_flutter: ^18.4.0 #to fix recaptcha warning in play console
   new_version_plus: ^0.0.11
   flutter_screenutil: ^5.9.0
+  wakelock_plus: ^1.1.4
+  shimmer: ^3.0.0
 
 
 dev_dependencies:

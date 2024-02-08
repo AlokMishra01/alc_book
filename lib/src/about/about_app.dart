@@ -37,8 +37,9 @@ class _AboutAppState extends State<AboutApp> {
         backgroundColor: AppColors.red,
         titleSpacing: 0.0,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             CupertinoIcons.arrow_left,
+            color: AppColors.white,
           ),
           onPressed: () => Navigator.pop(context),
         ),

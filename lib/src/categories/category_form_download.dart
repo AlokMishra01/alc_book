@@ -48,8 +48,9 @@ class _CategoryFormDownloadsState extends State<CategoryFormDownloads> {
         backgroundColor: AppColors.red,
         titleSpacing: 0.0,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             CupertinoIcons.arrow_left,
+            color: AppColors.white,
           ),
           onPressed: () => Navigator.pop(context),
         ),
@@ -111,6 +112,7 @@ class _CategoryFormDownloadsState extends State<CategoryFormDownloads> {
           padding: const EdgeInsets.all(16.0),
           decoration: BoxDecoration(
             color: AppColors.backgroundAlt,
+            borderRadius: BorderRadius.circular(12),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
