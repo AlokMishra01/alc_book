@@ -135,11 +135,12 @@ class _CategoryBooksState extends State<CategoryBooks> {
             padding: EdgeInsets.all(16.0.r),
             decoration: BoxDecoration(
               color: AppColors.backgroundAlt,
+              borderRadius: BorderRadius.circular(16.r),
             ),
             child: Row(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                   child: CachedNetworkImage(
                     placeholder: (_, __) => Shimmer.fromColors(
                       baseColor: AppColors.shimmerBase,
@@ -149,7 +150,7 @@ class _CategoryBooksState extends State<CategoryBooks> {
                         // height: isPortrait ? 200 : 150,
                         decoration: BoxDecoration(
                           color: AppColors.textTwo.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(12.r),
                         ),
                       ),
                     ),

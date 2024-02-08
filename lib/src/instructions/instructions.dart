@@ -18,11 +18,11 @@ class Instructions extends StatefulWidget {
 }
 
 class _InstructionsState extends State<Instructions> {
-  final _fullName = TextEditingController();
-  final _mobile = TextEditingController();
-  final _email = TextEditingController();
-  final _country = TextEditingController();
-  final _voucher = TextEditingController();
+  // final _fullName = TextEditingController();
+  // final _mobile = TextEditingController();
+  // final _email = TextEditingController();
+  // final _country = TextEditingController();
+  // final _voucher = TextEditingController();
   String? _gender;
   String? _account;
 
@@ -31,11 +31,11 @@ class _InstructionsState extends State<Instructions> {
 
   @override
   void dispose() {
-    _fullName.dispose();
-    _mobile.dispose();
-    _email.dispose();
-    _country.dispose();
-    _voucher.dispose();
+    // _fullName.dispose();
+    // _mobile.dispose();
+    // _email.dispose();
+    // _country.dispose();
+    // _voucher.dispose();
     super.dispose();
   }
 
@@ -149,25 +149,6 @@ class _InstructionsState extends State<Instructions> {
                                 ),
                         ),
                       ])),
-                      // Text(
-                      //   'Download (Android): Books Timothy',
-                      //   // textAlign: TextAlign.justify,
-                      //   style: TextStyle(
-                      //     color: AppColors.primary,
-                      //     fontSize: 16.0,
-                      //     fontWeight: FontWeight.w700,
-                      //   ),
-                      // ),
-                      // const SizedBox(height: 5),
-                      // Text(
-                      //   'Download (Desktop/ios): timothy-books.web.app',
-                      //   // textAlign: TextAlign.justify,
-                      //   style: TextStyle(
-                      //     color: AppColors.primary,
-                      //     fontSize: 16.0,
-                      //     fontWeight: FontWeight.w700,
-                      //   ),
-                      // ),
                       const SizedBox(height: 10),
                       Text(
                         'तपाईंले लेखकको दर्शन र मिसनमा सहयोग गर्न साँचो प्रेरणा पाउनुभयो भने '
@@ -182,101 +163,28 @@ class _InstructionsState extends State<Instructions> {
                       Divider(
                         color: AppColors.textTwo,
                         thickness: 1.0,
+                        height: 20.0,
+                      ),
+                      Text(
+                        '➡ Bank',
+                        style: TextStyle(
+                          color: AppColors.textTwo,
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Center(
+                        child: SizedBox(
+                          height: 250,
+                          child: Image.asset('assets/images/bank_qr.png'),
+                        ),
+                      ),
+                      Divider(
+                        color: AppColors.textTwo,
+                        thickness: 1.0,
                         height: 25.0,
                       ),
-                      MaterialButton(
-                        elevation: 0.0,
-                        // color: AppColors.primary,
-                        padding: const EdgeInsets.all(5),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        // minWidth: double.maxFinite,
-                        onPressed: () {
-                          Clipboard.setData(const ClipboardData(
-                            text: 'A/C name: Deesis Aryal\n'
-                                'Rastriya Banijya Bank\n'
-                                'Swift Code: RBBANPKA\n'
-                                'A/C No: 1150100043134010',
-                          ));
-                          SnackbarMessage.message(
-                              message: 'Details copied', context: context);
-                        },
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '➡',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                color: AppColors.textTwo,
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            const SizedBox(width: 8.0),
-                            Text(
-                              'A/C name: Deesis Aryal\n'
-                              'Rastriya Banijya Bank\n'
-                              'Swift Code: RBBANPKA\n'
-                              'A/C No: 1150100043134010',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                color: AppColors.textTwo,
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      const SizedBox(height: 8.0),
-                      MaterialButton(
-                        elevation: 0.0,
-                        // color: AppColors.primary,
-                        padding: const EdgeInsets.all(5),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        onPressed: () {
-                          Clipboard.setData(const ClipboardData(
-                              text: 'A/C name: Tara Aryal\n'
-                                  'Nepal SBI Bank Ltd, Kathmandu\n'
-                                  'Swift Code: NSBINPKA\n'
-                                  'A/C No: 21515243400328'));
-                          SnackbarMessage.message(
-                              message: 'Details copied', context: context);
-                        },
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '➡',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                color: AppColors.textTwo,
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            const SizedBox(width: 8.0),
-                            Text(
-                              'Tara Aryal\n'
-                              'Nepal SBI Bank Ltd, Kathmandu\n'
-                              'Swift Code: NSBINPKA\n'
-                              'A/C No: 21515243400328',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                color: AppColors.textTwo,
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 8.0),
                       MaterialButton(
                         elevation: 0.0,
                         // color: AppColors.primary,
@@ -317,6 +225,7 @@ class _InstructionsState extends State<Instructions> {
                           ],
                         ),
                       ),
+
                       Divider(
                         color: AppColors.textTwo,
                         thickness: 1.0,
@@ -507,3 +416,136 @@ class _InstructionsState extends State<Instructions> {
     );
   }
 }
+
+// MaterialButton(
+//   elevation: 0.0,
+//   // color: AppColors.primary,
+//   padding: const EdgeInsets.all(5),
+//   shape: RoundedRectangleBorder(
+//     borderRadius: BorderRadius.circular(10.0),
+//   ),
+//   // minWidth: double.maxFinite,
+//   onPressed: () {
+//     Clipboard.setData(const ClipboardData(
+//       text: 'A/C name: Deesis Aryal\n'
+//           'Rastriya Banijya Bank\n'
+//           'Swift Code: RBBANPKA\n'
+//           'A/C No: 1150100043134010',
+//     ));
+//     SnackbarMessage.message(
+//         message: 'Details copied', context: context);
+//   },
+//   child: Row(
+//     crossAxisAlignment: CrossAxisAlignment.start,
+//     children: [
+//       Text(
+//         '➡',
+//         textAlign: TextAlign.justify,
+//         style: TextStyle(
+//           color: AppColors.textTwo,
+//           fontSize: 14.0,
+//           fontWeight: FontWeight.w400,
+//         ),
+//       ),
+//       const SizedBox(width: 8.0),
+//       Text(
+//         'A/C name: Deesis Aryal\n'
+//         'Rastriya Banijya Bank\n'
+//         'Swift Code: RBBANPKA\n'
+//         'A/C No: 1150100043134010',
+//         textAlign: TextAlign.justify,
+//         style: TextStyle(
+//           color: AppColors.textTwo,
+//           fontSize: 14.0,
+//           fontWeight: FontWeight.w700,
+//         ),
+//       ),
+//     ],
+//   ),
+// ),
+// const SizedBox(height: 8.0),
+// MaterialButton(
+//   elevation: 0.0,
+//   // color: AppColors.primary,
+//   padding: const EdgeInsets.all(5),
+//   shape: RoundedRectangleBorder(
+//     borderRadius: BorderRadius.circular(10.0),
+//   ),
+//   onPressed: () {
+//     Clipboard.setData(const ClipboardData(
+//         text: 'A/C name: Tara Aryal\n'
+//             'Nepal SBI Bank Ltd, Kathmandu\n'
+//             'Swift Code: NSBINPKA\n'
+//             'A/C No: 21515243400328'));
+//     SnackbarMessage.message(
+//         message: 'Details copied', context: context);
+//   },
+//   child: Row(
+//     crossAxisAlignment: CrossAxisAlignment.start,
+//     children: [
+//       Text(
+//         '➡',
+//         textAlign: TextAlign.justify,
+//         style: TextStyle(
+//           color: AppColors.textTwo,
+//           fontSize: 14.0,
+//           fontWeight: FontWeight.w400,
+//         ),
+//       ),
+//       const SizedBox(width: 8.0),
+//       Text(
+//         'Tara Aryal\n'
+//         'Nepal SBI Bank Ltd, Kathmandu\n'
+//         'Swift Code: NSBINPKA\n'
+//         'A/C No: 21515243400328',
+//         textAlign: TextAlign.justify,
+//         style: TextStyle(
+//           color: AppColors.textTwo,
+//           fontSize: 14.0,
+//           fontWeight: FontWeight.w700,
+//         ),
+//       ),
+//     ],
+//   ),
+// ),
+// const SizedBox(height: 8.0),
+// MaterialButton(
+//   elevation: 0.0,
+//   // color: AppColors.primary,
+//   padding: const EdgeInsets.all(5),
+//   shape: RoundedRectangleBorder(
+//     borderRadius: BorderRadius.circular(10.0),
+//   ),
+//   onPressed: () {
+//     Clipboard.setData(const ClipboardData(
+//       text: 'A/C name:Sushma Shrestha\n'
+//           'Esewa/Khalti: 9840841486',
+//     ));
+//     SnackbarMessage.message(
+//         message: 'Details copied', context: context);
+//   },
+//   child: Row(
+//     crossAxisAlignment: CrossAxisAlignment.start,
+//     children: [
+//       Text(
+//         '➡',
+//         textAlign: TextAlign.justify,
+//         style: TextStyle(
+//           color: AppColors.textTwo,
+//           fontSize: 14.0,
+//           fontWeight: FontWeight.w400,
+//         ),
+//       ),
+//       const SizedBox(width: 8.0),
+//       Text(
+//         'Esewa or Khalti\n9840841486\n(Sushma Shrestha)',
+//         textAlign: TextAlign.justify,
+//         style: TextStyle(
+//           color: AppColors.textTwo,
+//           fontSize: 14.0,
+//           fontWeight: FontWeight.w700,
+//         ),
+//       ),
+//     ],
+//   ),
+// ),
